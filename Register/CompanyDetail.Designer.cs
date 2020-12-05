@@ -36,6 +36,7 @@ namespace Register
             this.singleEmployeeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listOfEmployeeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.activeEmployeeControl1 = new Register.ActiveEmployeeControl();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -43,6 +44,7 @@ namespace Register
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.activeEmployeeControl1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 29);
             this.panel1.Name = "panel1";
@@ -104,6 +106,16 @@ namespace Register
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
+            // activeEmployeeControl1
+            // 
+            this.activeEmployeeControl1.BackColor = System.Drawing.Color.Transparent;
+            this.activeEmployeeControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.activeEmployeeControl1.ForeColor = System.Drawing.SystemColors.Window;
+            this.activeEmployeeControl1.Location = new System.Drawing.Point(0, 0);
+            this.activeEmployeeControl1.Name = "activeEmployeeControl1";
+            this.activeEmployeeControl1.Size = new System.Drawing.Size(800, 421);
+            this.activeEmployeeControl1.TabIndex = 0;
+            // 
             // CompanyDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -135,5 +147,6 @@ namespace Register
         private System.Windows.Forms.ToolStripMenuItem singleEmployeeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listOfEmployeeToolStripMenuItem;
         private System.Windows.Forms.MenuStrip menuStrip1;
+        private ActiveEmployeeControl activeEmployeeControl1;
     }
 }

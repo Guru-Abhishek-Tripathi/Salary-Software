@@ -19,7 +19,7 @@ namespace Register
 
         private void CompanyDetail_Load(object sender, EventArgs e)
         {
-        
+            
         }
     }
 }
