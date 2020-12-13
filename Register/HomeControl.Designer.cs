@@ -31,10 +31,10 @@ namespace Register
         {
             this.listView1 = new System.Windows.Forms.ListView();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listView1
@@ -72,19 +72,6 @@ namespace Register
             this.label1.Text = "Available Companies";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Teal;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.Window;
-            this.button1.Location = new System.Drawing.Point(0, 92);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(120, 28);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Search By Id";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.Teal;
@@ -105,6 +92,7 @@ namespace Register
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(200, 29);
             this.textBox1.TabIndex = 5;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // maskedTextBox1
             // 
@@ -113,6 +101,20 @@ namespace Register
             this.maskedTextBox1.Name = "maskedTextBox1";
             this.maskedTextBox1.Size = new System.Drawing.Size(250, 29);
             this.maskedTextBox1.TabIndex = 6;
+            this.maskedTextBox1.TextChanged += new System.EventHandler(this.maskedTextBox1_TextChanged);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Teal;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.Window;
+            this.button1.Location = new System.Drawing.Point(0, 92);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(120, 28);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Search By Id";
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // HomeControl
             // 
@@ -138,9 +140,9 @@ namespace Register
 
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -73,6 +73,16 @@ namespace Register.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        internal static byte[] company {
+            get {
+                object obj = ResourceManager.GetObject("company", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         internal static byte[] excel_spreadsheet_examples_for_students {
             get {
                 object obj = ResourceManager.GetObject("excel_spreadsheet_examples_for_students", resourceCulture);

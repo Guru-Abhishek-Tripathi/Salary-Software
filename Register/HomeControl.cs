@@ -16,49 +16,45 @@ namespace Register
         public static string firstName = "";
         public static string lastName = "";
         public static string companyName = "";
+        List<ListViewItem> masterlist;
 
         public HomeControl()
         {
             InitializeComponent();
+
+            masterlist = new List<ListViewItem>();
         }
 
         private void HomeControl_Load(object sender, EventArgs e)
         {
             System.Data.DataTable dtExcel = new System.Data.DataTable();
             dtExcel.TableName = "ExcelData";
-            string sourceConstr = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source='C:\Users\अजय़\source\repos\Register\Register\Resources\excel-spreadsheet-examples-for-students.xls';Extended Properties='excel 8.0;HDR=Yes;IMEX=1'";
+            string sourceConstr = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source='C:\Users\अजय़\source\repos\Register\Register\Resources\detail\company.xls';Extended Properties='excel 8.0;HDR=Yes;IMEX=1'";
             OleDbConnection con = new OleDbConnection(sourceConstr);
             string query = "select * from [au-500$]";
             OleDbDataAdapter data = new OleDbDataAdapter(query, con);
             data.Fill(dtExcel);
-            listView1.Columns.Add("First Name", 120, HorizontalAlignment.Left);
-            listView1.Columns.Add("Last Name", 120, HorizontalAlignment.Left);
-            listView1.Columns.Add("Company Name", 200, HorizontalAlignment.Left);
-            listView1.Columns.Add("Address", 200, HorizontalAlignment.Left);
-            listView1.Columns.Add("City", 150, HorizontalAlignment.Left);
-            listView1.Columns.Add("State", 100, HorizontalAlignment.Left);
-            listView1.Columns.Add("Phone No", 200, HorizontalAlignment.Left);
-            listView1.Columns.Add("Email", 250, HorizontalAlignment.Left);
-            listView1.Columns.Add("Web", 300, HorizontalAlignment.Left);
+            listView1.Columns.Add("Company ID", 120, HorizontalAlignment.Left);
+            listView1.Columns.Add("Company Name", 500, HorizontalAlignment.Left);
+            listView1.Columns.Add("Email", 400, HorizontalAlignment.Left);
+            listView1.Columns.Add("Contact", 220, HorizontalAlignment.Left);
 
             listView1.Items.Clear();
             for(int i = 0; i < dtExcel.Rows.Count; i++)
             {
                 DataRow dRow = dtExcel.Rows[i];
-                if(dRow.RowState != DataRowState.Deleted)
+                if(dRow.RowState != DataRowState.Deleted && dRow["Status"].Equals("Active"))
                 {
-                    ListViewItem lvi = new ListViewItem(dRow["First Name"].ToString());
-                    lvi.SubItems.Add(dRow["Last Name"].ToString());
-                    lvi.SubItems.Add(dRow["Company Name"].ToString());
-                    lvi.SubItems.Add(dRow["Address"].ToString());
-                    lvi.SubItems.Add(dRow["City"].ToString());
-                    lvi.SubItems.Add(dRow["State"].ToString());
-                    lvi.SubItems.Add(dRow["Phone No"].ToString());
-                    lvi.SubItems.Add(dRow["Email"].ToString());
-                    lvi.SubItems.Add(dRow["Web"].ToString());
+                    ListViewItem lvi = new ListViewItem(dRow["Employer ID"].ToString());
+                    lvi.SubItems.Add(dRow["Name of Firm"].ToString());
+                    lvi.SubItems.Add(dRow["Email ID"].ToString());
+                    lvi.SubItems.Add(dRow["Contact"].ToString());
                     listView1.Items.Add(lvi);
+                    masterlist.Add(lvi);
                 }
             }
+
+            listView1.Columns[listView1.Columns.Count - 1].Width = -2;
         }
 
         private void listView1_ItemActivate(object sender, EventArgs e)
@@ -74,5 +70,45 @@ namespace Register
                 companyDetail.Show();
             }
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            listView1.Items.Clear();
+
+            // This filters and adds your filtered items to listView1
+            foreach (ListViewItem item in masterlist.Where(lvi => lvi.Text.ToLower().Contains(textBox1.Text.ToLower().Trim())))
+            {
+                listView1.Items.Add(item);
+            }
+        }
+            
+       
+        private void maskedTextBox1_TextChanged(object sender, EventArgs e)
+        {
+            //prevent flickering
+            listView1.BeginUpdate();
+
+            listView1.Items.Clear();
+
+            string search = maskedTextBox1.Text;
+            for (int i = 0; i < masterlist.Count; i++)
+            {
+                ListViewItem item = masterlist[i];
+                if (ItemMatches(item, search))
+                {
+                    listView1.Items.Add(item);
+                }
+            }
+
+            listView1.EndUpdate();
+        }
+
+
+        private bool ItemMatches(ListViewItem item, string text)
+        {
+            return item.SubItems[1].Text.ToLower().Contains(text.ToLower());
+        }
+
+
     }
 }

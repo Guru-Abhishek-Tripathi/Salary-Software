@@ -138,6 +138,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Resources\company.xls" />
     <None Include="Resources\excel-spreadsheet-examples-for-students.xls" />
   </ItemGroup>
   <ItemGroup>
