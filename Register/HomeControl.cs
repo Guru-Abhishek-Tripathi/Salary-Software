@@ -29,7 +29,7 @@ namespace Register
         {
             System.Data.DataTable dtExcel = new System.Data.DataTable();
             dtExcel.TableName = "ExcelData";
-            string sourceConstr = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source='C:\Users\अजय़\source\repos\Register\Register\Resources\detail\company.xls';Extended Properties='excel 8.0;HDR=Yes;IMEX=1'";
+            string sourceConstr = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source='S:\detail\company.xls';Extended Properties='excel 8.0;HDR=Yes;IMEX=1'";
             OleDbConnection con = new OleDbConnection(sourceConstr);
             string query = "select * from [au-500$]";
             OleDbDataAdapter data = new OleDbDataAdapter(query, con);

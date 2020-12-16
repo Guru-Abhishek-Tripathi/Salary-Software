@@ -45,7 +45,7 @@ namespace Register
             this.welcome_label.AutoSize = true;
             this.welcome_label.BackColor = System.Drawing.Color.Transparent;
             this.welcome_label.Font = new System.Drawing.Font("Modern No. 20", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.welcome_label.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.welcome_label.ForeColor = System.Drawing.Color.Red;
             this.welcome_label.Location = new System.Drawing.Point(94, 52);
             this.welcome_label.Name = "welcome_label";
             this.welcome_label.Size = new System.Drawing.Size(444, 34);

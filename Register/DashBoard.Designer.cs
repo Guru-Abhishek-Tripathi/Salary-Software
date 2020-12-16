@@ -37,7 +37,7 @@ namespace Register
             this.main_panel = new System.Windows.Forms.Panel();
             this.addCompanyControl1 = new Register.AddCompanyControl();
             this.declinedControl1 = new Register.DeclinedControl();
-            this.homeControl1 = new Register.HomeControl();
+            homeControl1 = new Register.HomeControl();
             this.menuStrip1.SuspendLayout();
             this.main_panel.SuspendLayout();
             this.SuspendLayout();
@@ -95,7 +95,7 @@ namespace Register
             this.main_panel.BackgroundImage = global::Register.Properties.Resources.background;
             this.main_panel.Controls.Add(this.addCompanyControl1);
             this.main_panel.Controls.Add(this.declinedControl1);
-            this.main_panel.Controls.Add(this.homeControl1);
+            this.main_panel.Controls.Add(homeControl1);
             this.main_panel.Cursor = System.Windows.Forms.Cursors.Default;
             this.main_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.main_panel.Location = new System.Drawing.Point(0, 29);
@@ -106,11 +106,11 @@ namespace Register
             // addCompanyControl1
             // 
             this.addCompanyControl1.BackColor = System.Drawing.Color.Transparent;
-            this.addCompanyControl1.ForeColor = System.Drawing.SystemColors.Window;
+            this.addCompanyControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.addCompanyControl1.Location = new System.Drawing.Point(0, 0);
             this.addCompanyControl1.Name = "addCompanyControl1";
-            this.addCompanyControl1.Size = new System.Drawing.Size(800, 426);
-            this.addCompanyControl1.TabIndex = 2;
+            this.addCompanyControl1.Size = new System.Drawing.Size(800, 421);
+            this.addCompanyControl1.TabIndex = 0;
             // 
             // declinedControl1
             // 
@@ -123,13 +123,13 @@ namespace Register
             // 
             // homeControl1
             // 
-            this.homeControl1.BackColor = System.Drawing.Color.Transparent;
-            this.homeControl1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.homeControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.homeControl1.Location = new System.Drawing.Point(0, 0);
-            this.homeControl1.Name = "homeControl1";
-            this.homeControl1.Size = new System.Drawing.Size(800, 421);
-            this.homeControl1.TabIndex = 0;
+            homeControl1.BackColor = System.Drawing.Color.Transparent;
+            homeControl1.Cursor = System.Windows.Forms.Cursors.Default;
+            homeControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            homeControl1.Location = new System.Drawing.Point(0, 0);
+            homeControl1.Name = "homeControl1";
+            homeControl1.Size = new System.Drawing.Size(800, 421);
+            homeControl1.TabIndex = 2;
             // 
             // DashBoard
             // 
@@ -161,7 +161,7 @@ namespace Register
         private System.Windows.Forms.ToolStripMenuItem logout_option;
         private System.Windows.Forms.Panel main_panel;
         private DeclinedControl declinedControl1;
-        private HomeControl homeControl1;
+        public static HomeControl homeControl1;
         private AddCompanyControl addCompanyControl1;
     }
 }
