@@ -33,15 +33,26 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EPPlus, Version=5.4.2.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.5.4.2\lib\net45\EPPlus.dll</HintPath>
+    </Reference>
     <Reference Include="ExcelDataReader, Version=3.6.0.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
       <HintPath>..\packages\ExcelDataReader.3.6.0\lib\net45\ExcelDataReader.dll</HintPath>
     </Reference>
     <Reference Include="ExcelDataReader.DataSet, Version=3.6.0.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
       <HintPath>..\packages\ExcelDataReader.DataSet.3.6.0\lib\net35\ExcelDataReader.DataSet.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationCore" />
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.5.0.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Threading.Tasks" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -65,11 +76,23 @@
     <Compile Include="AddCompanyControl.Designer.cs">
       <DependentUpon>AddCompanyControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddSingleEmployeeControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AddSingleEmployeeControl.Designer.cs">
+      <DependentUpon>AddSingleEmployeeControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="CompanyDetail.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CompanyDetail.Designer.cs">
       <DependentUpon>CompanyDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="companyDetailControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="companyDetailControl.Designer.cs">
+      <DependentUpon>companyDetailControl.cs</DependentUpon>
     </Compile>
     <Compile Include="DashBoard.cs">
       <SubType>Form</SubType>
@@ -97,14 +120,26 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResignedEmployeesControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ResignedEmployeesControl.Designer.cs">
+      <DependentUpon>ResignedEmployeesControl.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="ActiveEmployeeControl.resx">
       <DependentUpon>ActiveEmployeeControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddCompanyControl.resx">
       <DependentUpon>AddCompanyControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddSingleEmployeeControl.resx">
+      <DependentUpon>AddSingleEmployeeControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CompanyDetail.resx">
       <DependentUpon>CompanyDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="companyDetailControl.resx">
+      <DependentUpon>companyDetailControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DashBoard.resx">
       <DependentUpon>DashBoard.cs</DependentUpon>
@@ -128,6 +163,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ResignedEmployeesControl.resx">
+      <DependentUpon>ResignedEmployeesControl.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

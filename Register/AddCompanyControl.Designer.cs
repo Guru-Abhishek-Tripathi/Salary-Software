@@ -64,9 +64,9 @@ namespace Register
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -80,7 +80,7 @@ namespace Register
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(803, 37);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Company Details";
+            this.label1.Text = "Register Company";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // tableLayoutPanel1
@@ -152,150 +152,180 @@ namespace Register
             // 
             this.textBox17.BackColor = System.Drawing.Color.Gainsboro;
             this.textBox17.Dock = System.Windows.Forms.DockStyle.Top;
+            this.textBox17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox17.ForeColor = System.Drawing.Color.DimGray;
             this.textBox17.Location = new System.Drawing.Point(237, 515);
             this.textBox17.Margin = new System.Windows.Forms.Padding(3, 3, 300, 3);
             this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(243, 20);
+            this.textBox17.Size = new System.Drawing.Size(243, 22);
             this.textBox17.TabIndex = 33;
             // 
             // textBox16
             // 
             this.textBox16.BackColor = System.Drawing.Color.Gainsboro;
             this.textBox16.Dock = System.Windows.Forms.DockStyle.Top;
+            this.textBox16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox16.ForeColor = System.Drawing.Color.DimGray;
             this.textBox16.Location = new System.Drawing.Point(237, 483);
             this.textBox16.Margin = new System.Windows.Forms.Padding(3, 3, 300, 3);
             this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(243, 20);
+            this.textBox16.Size = new System.Drawing.Size(243, 22);
             this.textBox16.TabIndex = 32;
             // 
             // textBox15
             // 
             this.textBox15.BackColor = System.Drawing.Color.Gainsboro;
             this.textBox15.Dock = System.Windows.Forms.DockStyle.Top;
+            this.textBox15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox15.ForeColor = System.Drawing.Color.DimGray;
             this.textBox15.Location = new System.Drawing.Point(237, 451);
             this.textBox15.Margin = new System.Windows.Forms.Padding(3, 3, 300, 3);
             this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(243, 20);
+            this.textBox15.Size = new System.Drawing.Size(243, 22);
             this.textBox15.TabIndex = 31;
             // 
             // textBox14
             // 
             this.textBox14.BackColor = System.Drawing.Color.Gainsboro;
             this.textBox14.Dock = System.Windows.Forms.DockStyle.Top;
+            this.textBox14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox14.ForeColor = System.Drawing.Color.DimGray;
             this.textBox14.Location = new System.Drawing.Point(237, 419);
             this.textBox14.Margin = new System.Windows.Forms.Padding(3, 3, 300, 3);
             this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(243, 20);
+            this.textBox14.Size = new System.Drawing.Size(243, 22);
             this.textBox14.TabIndex = 30;
             // 
             // textBox13
             // 
             this.textBox13.BackColor = System.Drawing.Color.Gainsboro;
             this.textBox13.Dock = System.Windows.Forms.DockStyle.Top;
+            this.textBox13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox13.ForeColor = System.Drawing.Color.DimGray;
             this.textBox13.Location = new System.Drawing.Point(237, 387);
             this.textBox13.Margin = new System.Windows.Forms.Padding(3, 3, 300, 3);
             this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(243, 20);
+            this.textBox13.Size = new System.Drawing.Size(243, 22);
             this.textBox13.TabIndex = 29;
             // 
             // textBox12
             // 
             this.textBox12.BackColor = System.Drawing.Color.Gainsboro;
             this.textBox12.Dock = System.Windows.Forms.DockStyle.Top;
+            this.textBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox12.ForeColor = System.Drawing.Color.DimGray;
             this.textBox12.Location = new System.Drawing.Point(237, 355);
             this.textBox12.Margin = new System.Windows.Forms.Padding(3, 3, 300, 3);
             this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(243, 20);
+            this.textBox12.Size = new System.Drawing.Size(243, 22);
             this.textBox12.TabIndex = 28;
             // 
             // textBox11
             // 
             this.textBox11.BackColor = System.Drawing.Color.Gainsboro;
             this.textBox11.Dock = System.Windows.Forms.DockStyle.Top;
+            this.textBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox11.ForeColor = System.Drawing.Color.DimGray;
             this.textBox11.Location = new System.Drawing.Point(237, 323);
             this.textBox11.Margin = new System.Windows.Forms.Padding(3, 3, 300, 3);
             this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(243, 20);
+            this.textBox11.Size = new System.Drawing.Size(243, 22);
             this.textBox11.TabIndex = 27;
             // 
             // textBox10
             // 
             this.textBox10.BackColor = System.Drawing.Color.Gainsboro;
             this.textBox10.Dock = System.Windows.Forms.DockStyle.Top;
+            this.textBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox10.ForeColor = System.Drawing.Color.DimGray;
             this.textBox10.Location = new System.Drawing.Point(237, 291);
             this.textBox10.Margin = new System.Windows.Forms.Padding(3, 3, 300, 3);
             this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(243, 20);
+            this.textBox10.Size = new System.Drawing.Size(243, 22);
             this.textBox10.TabIndex = 26;
             // 
             // textBox9
             // 
             this.textBox9.BackColor = System.Drawing.Color.Gainsboro;
             this.textBox9.Dock = System.Windows.Forms.DockStyle.Top;
+            this.textBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox9.ForeColor = System.Drawing.Color.DimGray;
             this.textBox9.Location = new System.Drawing.Point(237, 259);
             this.textBox9.Margin = new System.Windows.Forms.Padding(3, 3, 300, 3);
             this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(243, 20);
+            this.textBox9.Size = new System.Drawing.Size(243, 22);
             this.textBox9.TabIndex = 25;
             // 
             // textBox8
             // 
             this.textBox8.BackColor = System.Drawing.Color.Gainsboro;
             this.textBox8.Dock = System.Windows.Forms.DockStyle.Top;
+            this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox8.ForeColor = System.Drawing.Color.DimGray;
             this.textBox8.Location = new System.Drawing.Point(237, 227);
             this.textBox8.Margin = new System.Windows.Forms.Padding(3, 3, 300, 3);
             this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(243, 20);
+            this.textBox8.Size = new System.Drawing.Size(243, 22);
             this.textBox8.TabIndex = 24;
             // 
             // textBox7
             // 
             this.textBox7.BackColor = System.Drawing.Color.Gainsboro;
             this.textBox7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox7.ForeColor = System.Drawing.Color.DimGray;
             this.textBox7.Location = new System.Drawing.Point(237, 195);
             this.textBox7.Margin = new System.Windows.Forms.Padding(3, 3, 300, 3);
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(243, 20);
+            this.textBox7.Size = new System.Drawing.Size(243, 22);
             this.textBox7.TabIndex = 23;
             // 
             // textBox5
             // 
             this.textBox5.BackColor = System.Drawing.Color.Gainsboro;
             this.textBox5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox5.ForeColor = System.Drawing.Color.DimGray;
             this.textBox5.Location = new System.Drawing.Point(237, 131);
             this.textBox5.Margin = new System.Windows.Forms.Padding(3, 3, 300, 3);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(243, 20);
+            this.textBox5.Size = new System.Drawing.Size(243, 22);
             this.textBox5.TabIndex = 21;
             // 
             // textBox4
             // 
             this.textBox4.BackColor = System.Drawing.Color.Gainsboro;
             this.textBox4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox4.ForeColor = System.Drawing.Color.DimGray;
             this.textBox4.Location = new System.Drawing.Point(237, 99);
             this.textBox4.Margin = new System.Windows.Forms.Padding(3, 3, 300, 3);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(243, 20);
+            this.textBox4.Size = new System.Drawing.Size(243, 22);
             this.textBox4.TabIndex = 20;
             // 
             // textBox3
             // 
             this.textBox3.BackColor = System.Drawing.Color.Gainsboro;
             this.textBox3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox3.ForeColor = System.Drawing.Color.DimGray;
             this.textBox3.Location = new System.Drawing.Point(237, 67);
             this.textBox3.Margin = new System.Windows.Forms.Padding(3, 3, 300, 3);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(243, 20);
+            this.textBox3.Size = new System.Drawing.Size(243, 22);
             this.textBox3.TabIndex = 19;
             // 
             // textBox2
             // 
             this.textBox2.BackColor = System.Drawing.Color.Gainsboro;
             this.textBox2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.ForeColor = System.Drawing.Color.DimGray;
             this.textBox2.Location = new System.Drawing.Point(237, 35);
             this.textBox2.Margin = new System.Windows.Forms.Padding(3, 3, 300, 3);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(243, 20);
+            this.textBox2.Size = new System.Drawing.Size(243, 22);
             this.textBox2.TabIndex = 18;
             // 
             // label2
@@ -523,11 +553,28 @@ namespace Register
             // 
             this.textBox1.BackColor = System.Drawing.Color.Gainsboro;
             this.textBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.ForeColor = System.Drawing.Color.DimGray;
             this.textBox1.Location = new System.Drawing.Point(237, 3);
             this.textBox1.Margin = new System.Windows.Forms.Padding(3, 3, 300, 3);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(243, 20);
+            this.textBox1.Size = new System.Drawing.Size(243, 22);
             this.textBox1.TabIndex = 17;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker1.CalendarForeColor = System.Drawing.Color.DimGray;
+            this.dateTimePicker1.CalendarMonthBackground = System.Drawing.Color.Gainsboro;
+            this.dateTimePicker1.CalendarTitleBackColor = System.Drawing.Color.Gainsboro;
+            this.dateTimePicker1.CalendarTitleForeColor = System.Drawing.Color.DimGray;
+            this.dateTimePicker1.CalendarTrailingForeColor = System.Drawing.Color.Gainsboro;
+            this.dateTimePicker1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dateTimePicker1.Location = new System.Drawing.Point(237, 163);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 3, 300, 3);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(243, 20);
+            this.dateTimePicker1.TabIndex = 34;
             // 
             // button1
             // 
@@ -556,16 +603,6 @@ namespace Register
             this.button2.Text = "Cancel";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.CalendarMonthBackground = System.Drawing.Color.Gainsboro;
-            this.dateTimePicker1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.dateTimePicker1.Location = new System.Drawing.Point(237, 163);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 3, 300, 3);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(243, 20);
-            this.dateTimePicker1.TabIndex = 34;
             // 
             // AddCompanyControl
             // 
