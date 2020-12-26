@@ -61,6 +61,7 @@ namespace Register
 
                     MessageBox.Show("Added Sccessfully.");
                     clearTextArea();
+                    DashBoard.homeControl1.loadData();
                     this.Visible = false;
                     DashBoard.homeControl1.Visible = true;
 

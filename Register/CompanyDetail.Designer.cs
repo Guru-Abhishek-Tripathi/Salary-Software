@@ -30,6 +30,8 @@ namespace Register
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.companyDetailControl1 = new Register.companyDetailControl();
+            activeEmployeeControl1 = new Register.ActiveEmployeeControl();
             this.companyDetailToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.activeEmployeesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.resignedEmployeesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -39,8 +41,6 @@ namespace Register
             this.listEmployeeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addSingleEmployeeControl1 = new Register.AddSingleEmployeeControl();
             this.resignedEmployeesControl1 = new Register.ResignedEmployeesControl();
-            this.companyDetailControl1 = new Register.companyDetailControl();
-            activeEmployeeControl1 = new Register.ActiveEmployeeControl();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -57,6 +57,29 @@ namespace Register
             this.panel1.Size = new System.Drawing.Size(800, 421);
             this.panel1.TabIndex = 2;
             this.panel1.TabStop = true;
+            // 
+            // companyDetailControl1
+            // 
+            this.companyDetailControl1.AutoScroll = true;
+            this.companyDetailControl1.AutoSize = true;
+            this.companyDetailControl1.BackColor = System.Drawing.Color.Transparent;
+            this.companyDetailControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.companyDetailControl1.Location = new System.Drawing.Point(0, 0);
+            this.companyDetailControl1.Name = "companyDetailControl1";
+            this.companyDetailControl1.Size = new System.Drawing.Size(800, 421);
+            this.companyDetailControl1.TabIndex = 1;
+            // 
+            // activeEmployeeControl1
+            // 
+            activeEmployeeControl1.AutoScroll = true;
+            activeEmployeeControl1.AutoSize = true;
+            activeEmployeeControl1.BackColor = System.Drawing.Color.Transparent;
+            activeEmployeeControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            activeEmployeeControl1.ForeColor = System.Drawing.SystemColors.Window;
+            activeEmployeeControl1.Location = new System.Drawing.Point(0, 0);
+            activeEmployeeControl1.Name = "activeEmployeeControl1";
+            activeEmployeeControl1.Size = new System.Drawing.Size(800, 421);
+            activeEmployeeControl1.TabIndex = 0;
             // 
             // companyDetailToolStripMenuItem
             // 
@@ -142,34 +165,13 @@ namespace Register
             this.resignedEmployeesControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.resignedEmployeesControl1.AutoSize = true;
             this.resignedEmployeesControl1.BackColor = System.Drawing.Color.Transparent;
+            this.resignedEmployeesControl1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.resignedEmployeesControl1.Location = new System.Drawing.Point(0, 29);
             this.resignedEmployeesControl1.Name = "resignedEmployeesControl1";
-            this.resignedEmployeesControl1.Size = new System.Drawing.Size(475, 23);
+            this.resignedEmployeesControl1.Size = new System.Drawing.Size(780, 801);
             this.resignedEmployeesControl1.TabIndex = 3;
-            // 
-            // companyDetailControl1
-            // 
-            this.companyDetailControl1.AutoScroll = true;
-            this.companyDetailControl1.AutoSize = true;
-            this.companyDetailControl1.BackColor = System.Drawing.Color.Transparent;
-            this.companyDetailControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.companyDetailControl1.Location = new System.Drawing.Point(0, 0);
-            this.companyDetailControl1.Name = "companyDetailControl1";
-            this.companyDetailControl1.Size = new System.Drawing.Size(800, 421);
-            this.companyDetailControl1.TabIndex = 1;
-            // 
-            // activeEmployeeControl1
-            // 
-            activeEmployeeControl1.AutoScroll = true;
-            activeEmployeeControl1.AutoSize = true;
-            activeEmployeeControl1.BackColor = System.Drawing.Color.Transparent;
-            activeEmployeeControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            activeEmployeeControl1.ForeColor = System.Drawing.SystemColors.Window;
-            activeEmployeeControl1.Location = new System.Drawing.Point(0, 0);
-            activeEmployeeControl1.Name = "activeEmployeeControl1";
-            activeEmployeeControl1.Size = new System.Drawing.Size(800, 421);
-            activeEmployeeControl1.TabIndex = 0;
             // 
             // CompanyDetail
             // 
@@ -207,9 +209,9 @@ namespace Register
         private System.Windows.Forms.ToolStripMenuItem addEmployeesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem singleEmployeeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listEmployeeToolStripMenuItem;
-        public static ActiveEmployeeControl activeEmployeeControl1;
         private companyDetailControl companyDetailControl1;
         private ResignedEmployeesControl resignedEmployeesControl1;
         private AddSingleEmployeeControl addSingleEmployeeControl1;
+        public static ActiveEmployeeControl activeEmployeeControl1;
     }
 }

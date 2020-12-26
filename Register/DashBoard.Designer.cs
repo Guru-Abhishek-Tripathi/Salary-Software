@@ -36,7 +36,7 @@ namespace Register
             this.logout_option = new System.Windows.Forms.ToolStripMenuItem();
             this.main_panel = new System.Windows.Forms.Panel();
             this.addCompanyControl1 = new Register.AddCompanyControl();
-            this.declinedControl1 = new Register.DeclinedControl();
+            declinedControl1 = new Register.DeclinedControl();
             homeControl1 = new Register.HomeControl();
             this.menuStrip1.SuspendLayout();
             this.main_panel.SuspendLayout();
@@ -94,7 +94,7 @@ namespace Register
             this.main_panel.BackColor = System.Drawing.SystemColors.Window;
             this.main_panel.BackgroundImage = global::Register.Properties.Resources.background;
             this.main_panel.Controls.Add(this.addCompanyControl1);
-            this.main_panel.Controls.Add(this.declinedControl1);
+            this.main_panel.Controls.Add(declinedControl1);
             this.main_panel.Controls.Add(homeControl1);
             this.main_panel.Cursor = System.Windows.Forms.Cursors.Default;
             this.main_panel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -114,12 +114,12 @@ namespace Register
             // 
             // declinedControl1
             // 
-            this.declinedControl1.BackColor = System.Drawing.Color.Transparent;
-            this.declinedControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.declinedControl1.Location = new System.Drawing.Point(0, 0);
-            this.declinedControl1.Name = "declinedControl1";
-            this.declinedControl1.Size = new System.Drawing.Size(800, 421);
-            this.declinedControl1.TabIndex = 1;
+            declinedControl1.BackColor = System.Drawing.Color.Transparent;
+            declinedControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            declinedControl1.Location = new System.Drawing.Point(0, 0);
+            declinedControl1.Name = "declinedControl1";
+            declinedControl1.Size = new System.Drawing.Size(800, 421);
+            declinedControl1.TabIndex = 1;
             // 
             // homeControl1
             // 
@@ -160,7 +160,7 @@ namespace Register
         private System.Windows.Forms.ToolStripMenuItem declined_option;
         private System.Windows.Forms.ToolStripMenuItem logout_option;
         private System.Windows.Forms.Panel main_panel;
-        private DeclinedControl declinedControl1;
+        public static DeclinedControl declinedControl1;
         public static HomeControl homeControl1;
         private AddCompanyControl addCompanyControl1;
     }

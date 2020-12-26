@@ -104,6 +104,46 @@ namespace Register
             listView1.Columns[listView1.Columns.Count - 1].Width = -2;
         }
 
+        private void listView1_ItemActivate(object sender, EventArgs e)
+        {
+            if (listView1.SelectedItems.Count > 0)
+            {
+                ListViewItem item = listView1.SelectedItems[0];
+                string companyID = item.SubItems[0].Text;
+
+                string sourceConstr = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source='C:\data\detail\company.xls';Extended Properties='excel 8.0;HDR=Yes;IMEX=0;READONLY=FALSE'";
+
+                try
+                {
+                    using (OleDbConnection cn = new OleDbConnection(sourceConstr))
+                    {
+                        cn.Open();
+
+                        //validate worksheet name.
+                        string worksheetName = "au-500$";
+
+                        String sql = "UPDATE [" + worksheetName + "] SET [Status]='Active' WHERE [Employer ID]='" + companyID + "';";
+
+                        Console.WriteLine("SQL :: " + sql);
+
+                        OleDbCommand cmd1 = new OleDbCommand(sql, cn);
+                        cmd1.ExecuteNonQuery();
+                        cn.Close();
+
+                    }
+
+                    loadData();
+                    MessageBox.Show("Services for company ID: "+companyID+" are resumed.");
+                    DashBoard.homeControl1.loadData();
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+            }
+        }
+
 
 
     }

@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
+using System.IO;
+using Aspose.Words;
 
 namespace Register
 {
@@ -143,7 +145,7 @@ namespace Register
                         //validate worksheet name.
                         string worksheetName = getWorkSheet(cn);
 
-                        String sql = "UPDATE [" + worksheetName + "] SET [Name of Firm]='" + textBox2.Text.ToString() +"', [Address]='" + textBox3.Text.ToString() +"', [Contact]='" + textBox4.Text.ToString() +"', [Email ID]='" + textBox5.Text.ToString() +"', [Date of Registration in PF ESI]='" + dateTimePicker1.Text.ToString() +"', [GST Number]='" + textBox7.Text.ToString() +"', [EPF Number]='" + textBox8.Text.ToString() +"', [EPFO Password]='" + textBox9.Text.ToString() +"', [ESI Number]='" + textBox10.Text.ToString() +"', [ESI Password]='" + textBox11.Text.ToString() +"', [Welfare Number]='" + textBox12.Text.ToString() +"', [Welfare Password]='" + textBox13.Text.ToString() +"', [ESI Registration Number]='" + textBox14.Text.ToString() +"', [Bank Name]='" + textBox15.Text.ToString() +"', [Bank Account Number]='" + textBox16.Text.ToString() +"', [IFSC]='" + textBox17.Text.ToString()+"' WHERE [Employer ID]="+textBox1.Text.ToString()+";";
+                        String sql = "UPDATE [" + worksheetName + "] SET [Name of Firm]='" + textBox2.Text.ToString() +"', [Address]='" + textBox3.Text.ToString() +"', [Contact]='" + textBox4.Text.ToString() +"', [Email ID]='" + textBox5.Text.ToString() +"', [Date of Registration in PF ESI]='" + dateTimePicker1.Text.ToString() +"', [GST Number]='" + textBox7.Text.ToString() +"', [EPF Number]='" + textBox8.Text.ToString() +"', [EPFO Password]='" + textBox9.Text.ToString() +"', [ESI Number]='" + textBox10.Text.ToString() +"', [ESI Password]='" + textBox11.Text.ToString() +"', [Welfare Number]='" + textBox12.Text.ToString() +"', [Welfare Password]='" + textBox13.Text.ToString() +"', [ESI Registration Number]='" + textBox14.Text.ToString() +"', [Bank Name]='" + textBox15.Text.ToString() +"', [Bank Account Number]='" + textBox16.Text.ToString() +"', [IFSC]='" + textBox17.Text.ToString()+"' WHERE [Employer ID]='"+textBox1.Text.ToString()+"';";
 
                         Console.WriteLine("SQL :: "+sql);
 
@@ -194,6 +196,267 @@ namespace Register
             return worksheetName;
         }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                saveAttachment(companyID, "gst_number", "GST Attachment");
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                saveAttachment(companyID, "esi_certificate", "ESI Certificate");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                saveAttachment(companyID, "pf_certificate", "PF Certificate");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                saveAttachment(companyID, "letter_head", "Letter Head");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                saveAttachment(companyID, "specimen_signature", "Specimen Signature");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                saveAttachment(companyID, "pan_card", "PAN Card");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                saveAttachment(companyID, "aadhaar_card", "Aadhaar Card");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                saveAttachment(companyID, "company_registration", "Company Registration");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+
+
+        public void saveAttachment(string companyId, string location, string attachmentName)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog
+            {
+                Title = "Company Attachments",
+                CheckFileExists = true,
+                CheckPathExists = true,
+                Filter = "Image Files(*jpg; *jpeg; *.png; *.gif; *.bmp;)|*.jpg; *.jpeg; *.png; *.gif; *.bmp;",
+                FilterIndex = 1,
+                RestoreDirectory = true,
+
+                ReadOnlyChecked = true,
+            };
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string filePath = Path.Combine(@"C:\data\detail\company_attachments\", location + @"\" + companyId + "_" + location + ".png");
+                string sourceConstr = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source='C:\data\detail\company.xls';Extended Properties='excel 8.0;HDR=Yes;IMEX=0;READONLY=FALSE'";
+
+                using (OleDbConnection cn = new OleDbConnection(sourceConstr))
+                {
+                    cn.Open();
+
+                    //validate worksheet name.
+                    string worksheetName = getWorkSheet(cn);
+
+                    String sql = "UPDATE [" + worksheetName + "] SET ["+attachmentName+"]='" + filePath + "' WHERE [Employer ID]='"+companyId+"';";
+
+                    Console.WriteLine("SQL :: " + sql);
+
+                    OleDbCommand cmd1 = new OleDbCommand(sql, cn);
+                    cmd1.ExecuteNonQuery();
+                    cn.Close();
+
+                }
+
+                File.Copy(openFileDialog.FileName, filePath, true);
+                MessageBox.Show("Uploaded");
+            }
+
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string[] images = new string[8];
+
+                int count = 0;
+
+                if (File.Exists(@"C:\data\detail\company_attachments\gst_number\" + companyID + "_gst_number.png"))
+                {
+                    images[count] = @"C:\data\detail\company_attachments\gst_number\" + companyID + "_gst_number.png";
+                    count++;
+                }
+                if (File.Exists(@"C:\data\detail\company_attachments\esi_certificate\" + companyID + "_esi_certificate.png"))
+                {
+                    images[count] = @"C:\data\detail\company_attachments\esi_certificate\" + companyID + "_esi_certificate.png";
+                    count++;
+                }
+                if (File.Exists(@"C:\data\detail\company_attachments\pf_certificate\" + companyID + "_pf_certificate.png"))
+                {
+                    images[count] = @"C:\data\detail\company_attachments\pf_certificate\" + companyID + "_pf_certificate.png";
+                    count++;
+                }
+                if (File.Exists(@"C:\data\detail\company_attachments\letter_head\" + companyID + "_letter_head.png"))
+                {
+                    images[count] = @"C:\data\detail\company_attachments\letter_head\" + companyID + "_letter_head.png";
+                    count++;
+                }
+                if (File.Exists(@"C:\data\detail\company_attachments\specimen_signature\" + companyID + "_specimen_signature.png"))
+                {
+                    images[count] = @"C:\data\detail\company_attachments\specimen_signature\" + companyID + "_specimen_signature.png";
+                    count++;
+                }
+                if (File.Exists(@"C:\data\detail\company_attachments\pan_card\" + companyID + "_pan_card.png"))
+                {
+                    images[count] = @"C:\data\detail\company_attachments\pan_card\" + companyID + "_pan_card.png";
+                    count++;
+                }
+                if (File.Exists(@"C:\data\detail\company_attachments\aadhaar_card\" + companyID + "_aadhaar_card.png"))
+                {
+                    images[count] = @"C:\data\detail\company_attachments\aadhaar_card\" + companyID + "_aadhaar_card.png";
+                    count++;
+                }
+                if (File.Exists(@"C:\data\detail\company_attachments\company_registration\" + companyID + "_company_registration.png"))
+                {
+                    images[count] = @"C:\data\detail\company_attachments\company_registration\" + companyID + "_company_registration.png";
+                    count++;
+                }
+
+                if (count == 0)
+                {
+                    MessageBox.Show("Upload attachments first.");
+                }
+                else
+                {
+                    Document document = new Document();
+                    DocumentBuilder builder = new DocumentBuilder(document);
+
+                    for(int i = 0; i < count; i++)
+                    {
+                        System.Drawing.Image image = System.Drawing.Image.FromFile(images[i]);
+                        PageSetup pageSetup = builder.PageSetup;
+
+                        pageSetup.PageWidth = ConvertUtil.PixelToPoint(image.Width, image.HorizontalResolution);
+                        pageSetup.PageHeight = ConvertUtil.PixelToPoint(image.Height, image.VerticalResolution);
+
+                        builder.InsertImage(image, Aspose.Words.Drawing.RelativeHorizontalPosition.Page, 0, Aspose.Words.Drawing.RelativeVerticalPosition.Page, 0,
+                            pageSetup.PageWidth, pageSetup.PageHeight, Aspose.Words.Drawing.WrapType.None);
+
+                        if (i < count)
+                            builder.InsertBreak(BreakType.SectionBreakNewPage);
+                    }
+
+                    document.Save(@"C:\data\detail\company_attachments\attachments_pdf\"+companyID+"_attachments.pdf");
+
+                    System.Diagnostics.Process.Start(@"C:\data\detail\company_attachments\attachments_pdf\" + companyID + "_attachments.pdf");
+                }
+
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            string sourceConstr = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source='C:\data\detail\company.xls';Extended Properties='excel 8.0;HDR=Yes;IMEX=0;READONLY=FALSE'";
+
+            try
+            {
+                using (OleDbConnection cn = new OleDbConnection(sourceConstr))
+                {
+                    cn.Open();
+
+                    //validate worksheet name.
+                    string worksheetName = getWorkSheet(cn);
+
+                    String sql = "UPDATE [" + worksheetName + "] SET [Status]='Inactive' WHERE [Employer ID]='" + textBox1.Text.ToString() + "';";
+
+                    Console.WriteLine("SQL :: " + sql);
+
+                    OleDbCommand cmd1 = new OleDbCommand(sql, cn);
+                    cmd1.ExecuteNonQuery();
+                    cn.Close();
+
+                }
+
+                MessageBox.Show("Services for this company are closed from now onwards.");
+                DashBoard.homeControl1.loadData();
+                DashBoard.declinedControl1.loadData();
+                DashBoard.homeControl1.Visible = true;
+                ((Form)this.TopLevelControl).Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
 
 
     }

@@ -24,7 +24,7 @@ namespace Register
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text.ToString().Equals("") || textBox2.Text.ToString().Equals("") || textBox3.Text.ToString().Equals("") || textBox4.Text.ToString().Equals("") || textBox5.Text.ToString().Equals("") || textBox6.Text.ToString().Equals("") || textBox7.Text.ToString().Equals("") || dateTimePicker1.Text.ToString().Equals("") || dateTimePicker2.Text.ToString().Equals("") || textBox10.Text.ToString().Equals("") || textBox11.Text.ToString().Equals("") || textBox12.Text.ToString().Equals("") || textBox13.Text.ToString().Equals("") || textBox14.Text.ToString().Equals("") || textBox15.Text.ToString().Equals("") || textBox16.Text.ToString().Equals(""))
+            if (textBox1.Text.ToString().Equals("") || textBox2.Text.ToString().Equals("") || textBox3.Text.ToString().Equals("") || textBox4.Text.ToString().Equals("") || textBox5.Text.ToString().Equals("") || textBox6.Text.ToString().Equals("") || textBox7.Text.ToString().Equals("") || dateTimePicker1.Text.ToString().Equals("") || dateTimePicker2.Text.ToString().Equals("") || textBox12.Text.ToString().Equals("") || textBox13.Text.ToString().Equals("") || textBox14.Text.ToString().Equals("") || textBox15.Text.ToString().Equals("") || textBox16.Text.ToString().Equals("") || textBox15.Text.ToString().Equals("") || textBox16.Text.ToString().Equals(""))
             {
                 MessageBox.Show("Please fill all the fields.");
             }
@@ -48,7 +48,7 @@ namespace Register
                         //validate worksheet name.
                         string worksheetName = getWorkSheet(cn);
 
-                        String sql = "INSERT INTO [" + worksheetName + "] ([Employee ID],[Name],[Father's/Husband's Name],[Department],[Location],[Permanent Address],[Employee Contact Number],[DOB],[DOJ],[Aadhaar Number],[Pan Number],[PF Registration Number],[ESI Registration Number],[Bank Name],[Bank Account Number],[IFSC],[Aadhaar Attachment],[Pan Attachment],[Security Cheque Attachment],[ESI card Attachment],[Status]) values('" + textBox1.Text.ToString() + "', '" + textBox2.Text.ToString() + "', '" + textBox3.Text.ToString() + "', '" + textBox4.Text.ToString() + "', '" + textBox5.Text.ToString() + "', '" + textBox6.Text.ToString() + "', '" + textBox7.Text.ToString() + "', '" + dateTimePicker1.Text.ToString() + "', '" + dateTimePicker2.Text.ToString() + "', '" + textBox10.Text.ToString() + "', '" + textBox11.Text.ToString() + "', '" + textBox12.Text.ToString() + "', '" + textBox13.Text.ToString() + "', '" + textBox14.Text.ToString() + "', '" + textBox15.Text.ToString() + "', '" + textBox16.Text.ToString() + "', 'NA', 'NA', 'NA' ,'NA', 'Active');";
+                        String sql = "INSERT INTO [" + worksheetName + "] ([Employee ID],[Name],[Father's/Husband's Name],[Department],[Location],[Permanent Address],[Employee Contact Number],[DOB],[DOJ],[Aadhaar Number],[Pan Number],[PF Registration Number],[ESI Registration Number],[Bank Name],[Bank Account Number],[IFSC],[Aadhaar Attachment],[Pan Attachment],[Security Cheque Attachment],[ESI card Attachment],[Status]) values('" + textBox1.Text.ToString() + "', '" + textBox2.Text.ToString() + "', '" + textBox3.Text.ToString() + "', '" + textBox4.Text.ToString() + "', '" + textBox5.Text.ToString() + "', '" + textBox6.Text.ToString() + "', '" + textBox7.Text.ToString() + "', '" + dateTimePicker1.Text.ToString() + "', '" + dateTimePicker2.Text.ToString() + "', '" + textBox12.Text.ToString() + "', '" + textBox13.Text.ToString() + "', '" + textBox14.Text.ToString() + "', '" + textBox15.Text.ToString() + "', '" + textBox16.Text.ToString() + "', '" + textBox15.Text.ToString() + "', '" + textBox16.Text.ToString() + "', 'NA', 'NA', 'NA' ,'NA', 'Active');";
                         OleDbCommand cmd1 = new OleDbCommand(sql, cn);
                         cmd1.ExecuteNonQuery();
                         cn.Close();
@@ -154,12 +154,9 @@ namespace Register
             textBox16.Text = "";
         }
 
-
-
-
-
-
-
-
+        private void button3_Click(object sender, EventArgs e)
+        {
+            clearTextArea();
+        }
     }
 }

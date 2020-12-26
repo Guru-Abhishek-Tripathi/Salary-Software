@@ -1,3 +1,4 @@
+C:\Users\अजय़\source\repos\Register\Register\obj\Debug\Register.csprojAssemblyReference.cache
 C:\Users\अजय़\source\repos\Register\Register\obj\Debug\Register.ActiveEmployeeControl.resources
 C:\Users\अजय़\source\repos\Register\Register\obj\Debug\Register.AddCompanyControl.resources
 C:\Users\अजय़\source\repos\Register\Register\obj\Debug\Register.AddSingleEmployeeControl.resources
@@ -15,10 +16,13 @@ C:\Users\अजय़\source\repos\Register\Register\bin\Debug\Resources\company.xl
 C:\Users\अजय़\source\repos\Register\Register\bin\Debug\Register.exe.config
 C:\Users\अजय़\source\repos\Register\Register\bin\Debug\Register.exe
 C:\Users\अजय़\source\repos\Register\Register\bin\Debug\Register.pdb
+C:\Users\अजय़\source\repos\Register\Register\bin\Debug\Aspose.Words.dll
+C:\Users\अजय़\source\repos\Register\Register\bin\Debug\Aspose.Words.Pdf2Word.dll
 C:\Users\अजय़\source\repos\Register\Register\bin\Debug\EPPlus.dll
 C:\Users\अजय़\source\repos\Register\Register\bin\Debug\ExcelDataReader.DataSet.dll
 C:\Users\अजय़\source\repos\Register\Register\bin\Debug\ExcelDataReader.dll
 C:\Users\अजय़\source\repos\Register\Register\bin\Debug\System.ComponentModel.Annotations.dll
+C:\Users\अजय़\source\repos\Register\Register\bin\Debug\Aspose.Words.xml
 C:\Users\अजय़\source\repos\Register\Register\bin\Debug\EPPlus.xml
 C:\Users\अजय़\source\repos\Register\Register\bin\Debug\ExcelDataReader.pdb
 C:\Users\अजय़\source\repos\Register\Register\bin\Debug\ExcelDataReader.xml
@@ -27,4 +31,3 @@ C:\Users\अजय़\source\repos\Register\Register\bin\Debug\ExcelDataReader.Data
 C:\Users\अजय़\source\repos\Register\Register\obj\Debug\Register.csproj.CopyComplete
 C:\Users\अजय़\source\repos\Register\Register\obj\Debug\Register.exe
 C:\Users\अजय़\source\repos\Register\Register\obj\Debug\Register.pdb
-C:\Users\अजय़\source\repos\Register\Register\obj\Debug\Register.csprojAssemblyReference.cache
