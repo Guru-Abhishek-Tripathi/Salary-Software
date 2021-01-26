@@ -115,5 +115,44 @@ namespace Register
             return item.SubItems[1].Text.ToLower().Contains(text.ToLower());
         }
 
+        private void listView1_ItemActivate(object sender, EventArgs e)
+        {
+            if (listView1.SelectedItems.Count > 0)
+            {
+                ListViewItem item = listView1.SelectedItems[0];
+                string employeeID = item.SubItems[0].Text;
+
+                string sourceConstr = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source='C:\data\detail\" + companyID + @"\" + companyID + "_employee.xls';Extended Properties='excel 8.0;HDR=Yes;IMEX=0;READONLY=FALSE'";
+
+                try
+                {
+                    using (OleDbConnection cn = new OleDbConnection(sourceConstr))
+                    {
+                        cn.Open();
+
+                        //validate worksheet name.
+                        string worksheetName = "employee_detail$";
+
+                        String sql = "UPDATE [" + worksheetName + "] SET [Status]='Active' WHERE [Employee ID]='" + employeeID + "';";
+
+                        Console.WriteLine("SQL :: " + sql);
+
+                        OleDbCommand cmd1 = new OleDbCommand(sql, cn);
+                        cmd1.ExecuteNonQuery();
+                        cn.Close();
+
+                    }
+
+                    loadData();
+                    MessageBox.Show("Services for employee ID: " + employeeID + " are resumed.");
+                    CompanyDetail.activeEmployeeControl1.loadData();
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+            }
+        }
     }
 }

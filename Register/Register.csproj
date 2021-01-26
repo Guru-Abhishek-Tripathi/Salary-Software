@@ -59,6 +59,9 @@
     <Reference Include="System.IO.Compression" />
     <Reference Include="System.Security" />
     <Reference Include="System.Threading.Tasks" />
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Windows.Controls.Ribbon" />
+    <Reference Include="System.Windows.Presentation" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -76,6 +79,12 @@
     <Compile Include="ActiveEmployeeControl.Designer.cs">
       <DependentUpon>ActiveEmployeeControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="ActiveEmployeeControl22.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ActiveEmployeeControl22.Designer.cs">
+      <DependentUpon>ActiveEmployeeControl22.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddCompanyControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -87,6 +96,12 @@
     </Compile>
     <Compile Include="AddSingleEmployeeControl.Designer.cs">
       <DependentUpon>AddSingleEmployeeControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AttendanceControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AttendanceControl.Designer.cs">
+      <DependentUpon>AttendanceControl.cs</DependentUpon>
     </Compile>
     <Compile Include="CompanyDetail.cs">
       <SubType>Form</SubType>
@@ -112,6 +127,24 @@
     <Compile Include="DeclinedControl.Designer.cs">
       <DependentUpon>DeclinedControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="DependentsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DependentsControl.Designer.cs">
+      <DependentUpon>DependentsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeDetail.Designer.cs">
+      <DependentUpon>EmployeeDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeDetailControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EmployeeDetailControl.Designer.cs">
+      <DependentUpon>EmployeeDetailControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,11 +168,17 @@
     <EmbeddedResource Include="ActiveEmployeeControl.resx">
       <DependentUpon>ActiveEmployeeControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ActiveEmployeeControl22.resx">
+      <DependentUpon>ActiveEmployeeControl22.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddCompanyControl.resx">
       <DependentUpon>AddCompanyControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddSingleEmployeeControl.resx">
       <DependentUpon>AddSingleEmployeeControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AttendanceControl.resx">
+      <DependentUpon>AttendanceControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CompanyDetail.resx">
       <DependentUpon>CompanyDetail.cs</DependentUpon>
@@ -152,6 +191,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DeclinedControl.resx">
       <DependentUpon>DeclinedControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DependentsControl.resx">
+      <DependentUpon>DependentsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeDetail.resx">
+      <DependentUpon>EmployeeDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeDetailControl.resx">
+      <DependentUpon>EmployeeDetailControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

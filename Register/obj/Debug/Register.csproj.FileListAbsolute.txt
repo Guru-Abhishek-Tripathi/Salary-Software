@@ -1,11 +1,15 @@
-C:\Users\अजय़\source\repos\Register\Register\obj\Debug\Register.csprojAssemblyReference.cache
 C:\Users\अजय़\source\repos\Register\Register\obj\Debug\Register.ActiveEmployeeControl.resources
+C:\Users\अजय़\source\repos\Register\Register\obj\Debug\Register.ActiveEmployeeControl22.resources
 C:\Users\अजय़\source\repos\Register\Register\obj\Debug\Register.AddCompanyControl.resources
 C:\Users\अजय़\source\repos\Register\Register\obj\Debug\Register.AddSingleEmployeeControl.resources
+C:\Users\अजय़\source\repos\Register\Register\obj\Debug\Register.AttendanceControl.resources
 C:\Users\अजय़\source\repos\Register\Register\obj\Debug\Register.CompanyDetail.resources
 C:\Users\अजय़\source\repos\Register\Register\obj\Debug\Register.companyDetailControl.resources
 C:\Users\अजय़\source\repos\Register\Register\obj\Debug\Register.DashBoard.resources
 C:\Users\अजय़\source\repos\Register\Register\obj\Debug\Register.DeclinedControl.resources
+C:\Users\अजय़\source\repos\Register\Register\obj\Debug\Register.DependentsControl.resources
+C:\Users\अजय़\source\repos\Register\Register\obj\Debug\Register.EmployeeDetail.resources
+C:\Users\अजय़\source\repos\Register\Register\obj\Debug\Register.EmployeeDetailControl.resources
 C:\Users\अजय़\source\repos\Register\Register\obj\Debug\Register.Form1.resources
 C:\Users\अजय़\source\repos\Register\Register\obj\Debug\Register.HomeControl.resources
 C:\Users\अजय़\source\repos\Register\Register\obj\Debug\Register.Properties.Resources.resources

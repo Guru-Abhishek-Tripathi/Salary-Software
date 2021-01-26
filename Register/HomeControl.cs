@@ -37,6 +37,19 @@ namespace Register
                 ListViewItem item = listView1.SelectedItems[0];
                 companyID = item.SubItems[0].Text;
 
+                List<Form> formList = new List<Form>();
+
+                foreach (Form form in Application.OpenForms)
+                    formList.Add(form);
+
+                foreach (Form form in formList)
+                {
+                    if (!(((form.Name).ToString()).Equals("Form1")) && !(((form.Name).ToString()).Equals("DashBoard")))
+                    {
+                        form.Close();
+                    }
+                }
+
                 CompanyDetail companyDetail = new CompanyDetail();
                 companyDetail.Show();
             }

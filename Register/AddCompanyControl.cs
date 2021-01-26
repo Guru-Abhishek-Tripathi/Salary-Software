@@ -52,7 +52,7 @@ namespace Register
                         //validate worksheet name.
                         string worksheetName = getWorkSheet(cn);
 
-                        String sql = "INSERT INTO [" + worksheetName + "] ([Employer ID],[Name of Firm],[Address],[Contact],[Email ID],[Date of Registration in PF ESI],[GST Number],[EPF Number],[EPFO Password],[ESI Number],[ESI Password],[Welfare Number],[Welfare Password],[ESI Registration Number],[Bank Name],[Bank Account Number],[IFSC],[GST Attachment],[ESI Certificate],[PF Certificate],[Letter Head],[Specimen Signature],[PAN Card],[Aadhaar Card],[Company Registration],[Status]) values('" + textBox1.Text.ToString() + "', '" + textBox2.Text.ToString() + "', '" + textBox3.Text.ToString() + "', '" + textBox4.Text.ToString() + "', '" + textBox5.Text.ToString() + "', '" + dateTimePicker1.Text.ToString() + "', '" + textBox7.Text.ToString() + "', '" + textBox8.Text.ToString() + "', '" + textBox9.Text.ToString() + "', '" + textBox10.Text.ToString() + "', '" + textBox11.Text.ToString() + "', '" + textBox12.Text.ToString() + "', '" + textBox13.Text.ToString() + "', '" + textBox14.Text.ToString() + "', '" + textBox15.Text.ToString() + "', '" + textBox16.Text.ToString() + "', '" + textBox17.Text.ToString() + "', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'Active')";
+                        String sql = "INSERT INTO [" + worksheetName + "] ([Employer ID],[Name of Firm],[Address],[Contact],[Email ID],[Date of Registration in PF ESI],[GST Number],[EPF Number],[EPFO Password],[ESI Number],[ESI Password],[Welfare Number],[Welfare Password],[ESI Registration Number],[Bank Name],[Bank Account Number],[IFSC],[GST Attachment],[ESI Certificate],[PF Certificate],[Letter Head],[Specimen Signature],[PAN Card],[Aadhaar Card],[Company Registration],[MSME],[Status]) values('" + textBox1.Text.ToString() + "', '" + textBox2.Text.ToString() + "', '" + textBox3.Text.ToString() + "', '" + textBox4.Text.ToString() + "', '" + textBox5.Text.ToString() + "', '" + dateTimePicker1.Text.ToString() + "', '" + textBox7.Text.ToString() + "', '" + textBox8.Text.ToString() + "', '" + textBox9.Text.ToString() + "', '" + textBox10.Text.ToString() + "', '" + textBox11.Text.ToString() + "', '" + textBox12.Text.ToString() + "', '" + textBox13.Text.ToString() + "', '" + textBox14.Text.ToString() + "', '" + textBox15.Text.ToString() + "', '" + textBox16.Text.ToString() + "', '" + textBox17.Text.ToString() + "', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'Active')";
 
                         OleDbCommand cmd1 = new OleDbCommand(sql, cn);
                         cmd1.ExecuteNonQuery();
@@ -160,7 +160,28 @@ namespace Register
             System.IO.Directory.CreateDirectory(pathString);
 
             string employeePath = System.IO.Path.Combine(pathString, folderName + "_employee.xls");
-            createSpreadSheet(employeePath);
+            createEmployeeSpreadSheet(employeePath);
+
+            string dependentPath = System.IO.Path.Combine(pathString, folderName + "_dependent.xls");
+            createDependentSpreadSheet(dependentPath);
+
+            string attendance = System.IO.Path.Combine(pathString, folderName + "_attendance");
+            System.IO.Directory.CreateDirectory(attendance);
+
+            string appointmentLetter = System.IO.Path.Combine(pathString, folderName + "_appointment_letter");
+            System.IO.Directory.CreateDirectory(appointmentLetter);
+
+            string joiningLetter = System.IO.Path.Combine(pathString, folderName + "_joining_letter");
+            System.IO.Directory.CreateDirectory(joiningLetter);
+
+            string esiDeclaration = System.IO.Path.Combine(pathString, folderName + "_esi_declaration");
+            System.IO.Directory.CreateDirectory(esiDeclaration);
+
+            string pfNumber = System.IO.Path.Combine(pathString, folderName + "_pf_number");
+            System.IO.Directory.CreateDirectory(pfNumber);
+
+            string esiCard = System.IO.Path.Combine(pathString, folderName + "_esi_certificate");
+            System.IO.Directory.CreateDirectory(esiCard);
 
             string aadhaarCard = System.IO.Path.Combine(pathString, folderName + "_aadhaar_card");
             System.IO.Directory.CreateDirectory(aadhaarCard);
@@ -168,15 +189,40 @@ namespace Register
             string panCard = System.IO.Path.Combine(pathString, folderName + "_pan_card");
             System.IO.Directory.CreateDirectory(panCard);
 
-            string securityCheque = System.IO.Path.Combine(pathString, folderName + "_security_cheque");
-            System.IO.Directory.CreateDirectory(securityCheque);
+            string bankCheque = System.IO.Path.Combine(pathString, folderName + "_bank_cheque");
+            System.IO.Directory.CreateDirectory(bankCheque);
 
-            string esiCard = System.IO.Path.Combine(pathString, folderName + "_esi_card");
-            System.IO.Directory.CreateDirectory(esiCard);
+            string nomineeDetail = System.IO.Path.Combine(pathString, folderName + "_nominee_detail");
+            System.IO.Directory.CreateDirectory(nomineeDetail);
 
+            string familyUndertaking = System.IO.Path.Combine(pathString, folderName + "_family_undertaking");
+            System.IO.Directory.CreateDirectory(familyUndertaking);
         }
 
-        public void createSpreadSheet(string spreadSheetPath)
+        public void createDependentSpreadSheet(string spreadSheetPath)
+        {
+            File.Delete(spreadSheetPath);
+            FileInfo spreadSheetInfo = new FileInfo(spreadSheetPath);
+
+            ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;
+            ExcelPackage package = new ExcelPackage(spreadSheetInfo);
+            var workSheet = package.Workbook.Worksheets.Add("dependent_detail");
+
+            workSheet.Cells["A1"].Value = "Employee ID";
+            workSheet.Cells["B1"].Value = "Dependent ID";
+            workSheet.Cells["C1"].Value = "Dependent Name";
+            workSheet.Cells["D1"].Value = "Relation";
+            workSheet.Cells["E1"].Value = "DOB";
+
+            workSheet.Cells["A1:E1"].Style.Font.Bold = true;
+            workSheet.Cells["A1:E1"].Style.Fill.SetBackground(System.Drawing.Color.Yellow);
+
+            workSheet.View.FreezePanes(2, 1);
+
+            package.Save();
+        }
+
+        public void createEmployeeSpreadSheet(string spreadSheetPath)
         {
             //string spreadSheetPath = @"C:\data\detail\test.xls";
 
@@ -189,7 +235,7 @@ namespace Register
 
             workSheet.Cells["A1"].Value = "Employee ID";
             workSheet.Cells["B1"].Value = "Name";
-            workSheet.Cells["C1"].Value = "Father's/Husband's Name";
+            workSheet.Cells["C1"].Value = "Father/Husband Name";
             workSheet.Cells["D1"].Value = "Department";
             workSheet.Cells["E1"].Value = "Location";
             workSheet.Cells["F1"].Value = "Permanent Address";
@@ -203,14 +249,23 @@ namespace Register
             workSheet.Cells["N1"].Value = "Bank Name";
             workSheet.Cells["O1"].Value = "Bank Account Number";
             workSheet.Cells["P1"].Value = "IFSC";
-            workSheet.Cells["Q1"].Value = "Aadhaar Attachment";
-            workSheet.Cells["R1"].Value = "Pan Attachment";
-            workSheet.Cells["S1"].Value = "Security Cheque Attachment";
-            workSheet.Cells["T1"].Value = "ESI Card Attachment";
-            workSheet.Cells["U1"].Value = "Status";
+            workSheet.Cells["Q1"].Value = "Appointment Letter";
+            workSheet.Cells["R1"].Value = "Joining Letter";
+            workSheet.Cells["S1"].Value = "ESI Declaration";
+            workSheet.Cells["T1"].Value = "PF Number";
+            workSheet.Cells["U1"].Value = "ESI Certificate";
+            workSheet.Cells["V1"].Value = "Aadhaar Card";
+            workSheet.Cells["W1"].Value = "PAN Card";
+            workSheet.Cells["X1"].Value = "Bank Cheque";
+            workSheet.Cells["Y1"].Value = "Nominee Detail";
+            workSheet.Cells["Z1"].Value = "Family Undertaking";
+            workSheet.Cells["AA1"].Value = "Nominee Name";
+            workSheet.Cells["AB1"].Value = "Nominee Relation";
+            workSheet.Cells["AC1"].Value = "Nominee Contact";
+            workSheet.Cells["AD1"].Value = "Status";
 
-            workSheet.Cells["A1:U1"].Style.Font.Bold = true;
-            workSheet.Cells["A1:U1"].Style.Fill.SetBackground(System.Drawing.Color.Yellow);
+            workSheet.Cells["A1:AD1"].Style.Font.Bold = true;
+            workSheet.Cells["A1:AD1"].Style.Fill.SetBackground(System.Drawing.Color.Yellow);
 
             workSheet.View.FreezePanes(2, 1);
 

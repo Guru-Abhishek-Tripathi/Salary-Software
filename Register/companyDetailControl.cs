@@ -1,15 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
 using System.IO;
 using Aspose.Words;
+using System.Windows.Controls;
 
 namespace Register
 {
@@ -17,6 +14,7 @@ namespace Register
     {
         bool edit = false;
         string companyID = "";
+        string downloadAttachment = "Default";
 
         public companyDetailControl()
         {
@@ -301,7 +299,7 @@ namespace Register
                 Title = "Company Attachments",
                 CheckFileExists = true,
                 CheckPathExists = true,
-                Filter = "Image Files(*jpg; *jpeg; *.png; *.gif; *.bmp;)|*.jpg; *.jpeg; *.png; *.gif; *.bmp;",
+                Filter = "PDF File(*pdf;)|*.pdf;",
                 FilterIndex = 1,
                 RestoreDirectory = true,
 
@@ -310,7 +308,7 @@ namespace Register
 
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                string filePath = Path.Combine(@"C:\data\detail\company_attachments\", location + @"\" + companyId + "_" + location + ".png");
+                string filePath = Path.Combine(@"C:\data\detail\company_attachments\", location + @"\" + companyId + "_" + location + ".pdf");
                 string sourceConstr = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source='C:\data\detail\company.xls';Extended Properties='excel 8.0;HDR=Yes;IMEX=0;READONLY=FALSE'";
 
                 using (OleDbConnection cn = new OleDbConnection(sourceConstr))
@@ -340,80 +338,71 @@ namespace Register
         {
             try
             {
-                string[] images = new string[8];
+                string location = "select";
+                switch (this.downloadAttachment)
+                {
+                    case "Aadhaar Card":
+                        if (File.Exists(@"C:\data\detail\company_attachments\aadhaar_card\" + companyID + "_aadhaar_card.pdf"))
+                            location = @"C:\data\detail\company_attachments\aadhaar_card\" + companyID + "_aadhaar_card.pdf";
+                        else
+                            location = "NA";
+                        break;
+                    case "Company Registration":
+                        if (File.Exists(@"C:\data\detail\company_attachments\company_registration\" + companyID + "_company_registration.pdf"))
+                            location = @"C:\data\detail\company_attachments\company_registration\" + companyID + "_company_registration.pdf";
+                        else
+                            location = "NA";
+                        break;
+                    case "ESI Certificate":
+                        if (File.Exists(@"C:\data\detail\company_attachments\esi_certificate\" + companyID + "_esi_certificate.pdf"))
+                            location = @"C:\data\detail\company_attachments\esi_certificate\" + companyID + "_esi_certificate.pdf";
+                        else
+                            location = "NA";
+                        break;
+                    case "GST Attachment":
+                        if (File.Exists(@"C:\data\detail\company_attachments\gst_number\" + companyID + "_gst_number.pdf"))
+                            location = @"C:\data\detail\company_attachments\gst_number\" + companyID + "_gst_number.pdf";
+                        else
+                            location = "NA";
+                        break;
+                    case "Letter Head":
+                        if (File.Exists(@"C:\data\detail\company_attachments\letter_head\" + companyID + "_letter_head.pdf"))
+                            location = @"C:\data\detail\company_attachments\letter_head\" + companyID + "_letter_head.pdf";
+                        else
+                            location = "NA";
+                        break;
+                    case "MSME Attachment":
+                        if (File.Exists(@"C:\data\detail\company_attachments\msme_attachment\" + companyID + "_msme_attachment.pdf"))
+                            location = @"C:\data\detail\company_attachments\msme_attachment\" + companyID + "_msme_attachment.pdf";
+                        else
+                            location = "NA";
+                        break;
+                    case "PAN Card":
+                        if (File.Exists(@"C:\data\detail\company_attachments\pan_card\" + companyID + "_pan_card.pdf"))
+                            location = @"C:\data\detail\company_attachments\pan_card\" + companyID + "_pan_card.pdf";
+                        else
+                            location = "NA";
+                        break;
+                    case "PF Certificate":
+                        if (File.Exists(@"C:\data\detail\company_attachments\pf_certificate\" + companyID + "_pf_certificate.pdf"))
+                        location = @"C:\data\detail\company_attachments\pf_certificate\" + companyID + "_pf_certificate.pdf";
+                        else
+                            location = "NA";
+                        break;
+                    case "Specimen Signature":
+                        if (File.Exists(@"C:\data\detail\company_attachments\specimen_signature\" + companyID + "_specimen_signature.pdf"))
+                            location = @"C:\data\detail\company_attachments\specimen_signature\" + companyID + "_specimen_signature.pdf";
+                        else
+                            location = "NA";
+                        break;
+                }
 
-                int count = 0;
-
-                if (File.Exists(@"C:\data\detail\company_attachments\gst_number\" + companyID + "_gst_number.png"))
-                {
-                    images[count] = @"C:\data\detail\company_attachments\gst_number\" + companyID + "_gst_number.png";
-                    count++;
-                }
-                if (File.Exists(@"C:\data\detail\company_attachments\esi_certificate\" + companyID + "_esi_certificate.png"))
-                {
-                    images[count] = @"C:\data\detail\company_attachments\esi_certificate\" + companyID + "_esi_certificate.png";
-                    count++;
-                }
-                if (File.Exists(@"C:\data\detail\company_attachments\pf_certificate\" + companyID + "_pf_certificate.png"))
-                {
-                    images[count] = @"C:\data\detail\company_attachments\pf_certificate\" + companyID + "_pf_certificate.png";
-                    count++;
-                }
-                if (File.Exists(@"C:\data\detail\company_attachments\letter_head\" + companyID + "_letter_head.png"))
-                {
-                    images[count] = @"C:\data\detail\company_attachments\letter_head\" + companyID + "_letter_head.png";
-                    count++;
-                }
-                if (File.Exists(@"C:\data\detail\company_attachments\specimen_signature\" + companyID + "_specimen_signature.png"))
-                {
-                    images[count] = @"C:\data\detail\company_attachments\specimen_signature\" + companyID + "_specimen_signature.png";
-                    count++;
-                }
-                if (File.Exists(@"C:\data\detail\company_attachments\pan_card\" + companyID + "_pan_card.png"))
-                {
-                    images[count] = @"C:\data\detail\company_attachments\pan_card\" + companyID + "_pan_card.png";
-                    count++;
-                }
-                if (File.Exists(@"C:\data\detail\company_attachments\aadhaar_card\" + companyID + "_aadhaar_card.png"))
-                {
-                    images[count] = @"C:\data\detail\company_attachments\aadhaar_card\" + companyID + "_aadhaar_card.png";
-                    count++;
-                }
-                if (File.Exists(@"C:\data\detail\company_attachments\company_registration\" + companyID + "_company_registration.png"))
-                {
-                    images[count] = @"C:\data\detail\company_attachments\company_registration\" + companyID + "_company_registration.png";
-                    count++;
-                }
-
-                if (count == 0)
-                {
-                    MessageBox.Show("Upload attachments first.");
-                }
+                if (location.Equals("select"))
+                    MessageBox.Show("Please select a document.");
+                else if (location.Equals("NA"))
+                    MessageBox.Show("Please upload document first.");
                 else
-                {
-                    Document document = new Document();
-                    DocumentBuilder builder = new DocumentBuilder(document);
-
-                    for(int i = 0; i < count; i++)
-                    {
-                        System.Drawing.Image image = System.Drawing.Image.FromFile(images[i]);
-                        PageSetup pageSetup = builder.PageSetup;
-
-                        pageSetup.PageWidth = ConvertUtil.PixelToPoint(image.Width, image.HorizontalResolution);
-                        pageSetup.PageHeight = ConvertUtil.PixelToPoint(image.Height, image.VerticalResolution);
-
-                        builder.InsertImage(image, Aspose.Words.Drawing.RelativeHorizontalPosition.Page, 0, Aspose.Words.Drawing.RelativeVerticalPosition.Page, 0,
-                            pageSetup.PageWidth, pageSetup.PageHeight, Aspose.Words.Drawing.WrapType.None);
-
-                        if (i < count)
-                            builder.InsertBreak(BreakType.SectionBreakNewPage);
-                    }
-
-                    document.Save(@"C:\data\detail\company_attachments\attachments_pdf\"+companyID+"_attachments.pdf");
-
-                    System.Diagnostics.Process.Start(@"C:\data\detail\company_attachments\attachments_pdf\" + companyID + "_attachments.pdf");
-                }
-
+                    System.Diagnostics.Process.Start(location);
 
             }
             catch(Exception ex)
@@ -458,6 +447,22 @@ namespace Register
             }
         }
 
+        private void button11_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                saveAttachment(companyID, "msme_attachment", "MSME");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
 
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ComboBox cmb = (ComboBox)sender;
+            this.downloadAttachment = cmb.SelectedItem.ToString();
+        }
     }
 }

@@ -11,14 +11,15 @@ using System.Data.OleDb;
 
 namespace Register
 {
-    public partial class ActiveEmployeeControl : UserControl
+    public partial class ActiveEmployeeControl22 : UserControl
     {
+
         public static string companyID = "";
         public static string employeeID = "";
 
         List<ListViewItem> masterlist;
 
-        public ActiveEmployeeControl()
+        public ActiveEmployeeControl22()
         {
             InitializeComponent();
             masterlist = new List<ListViewItem>();
@@ -37,7 +38,7 @@ namespace Register
             masterlist = new List<ListViewItem>();
             System.Data.DataTable dtExcel = new System.Data.DataTable();
             dtExcel.TableName = "ExcelData";
-            string sourceConstr = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source='C:\data\detail\" + companyID + @"\" + companyID + "_employee.xls';Extended Properties='excel 8.0;HDR=Yes;IMEX=0'";
+            string sourceConstr = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source='C:\data\detail\"+companyID+@"\"+companyID+"_employee.xls';Extended Properties='excel 8.0;HDR=Yes;IMEX=0'";
             OleDbConnection con = new OleDbConnection(sourceConstr);
             string query = "select * from [employee_detail$]";
             OleDbDataAdapter data = new OleDbDataAdapter(query, con);
@@ -119,6 +120,9 @@ namespace Register
                 employeeDetail.Show();
             }
         }
+
+
+
 
 
     }
