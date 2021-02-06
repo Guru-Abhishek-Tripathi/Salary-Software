@@ -13,17 +13,17 @@ namespace Register
 {
     public partial class CompanyDetail : Form
     {
-        string companyID = "";
+        public static string companyID = "";
 
         public CompanyDetail()
         {
             InitializeComponent();
-            companyID = HomeControl.companyID;
         }
 
         private void CompanyDetail_Load(object sender, EventArgs e)
         {
             SetActivePanel(companyDetailControl1);
+            companyID = HomeControl.companyID;
         }
 
         private void companyDetailToolStripMenuItem_Click(object sender, EventArgs e)
@@ -36,10 +36,13 @@ namespace Register
         {
             //set visible false for all
             companyDetailControl1.Visible = false;
-            //activeEmployeeControl1.Visible = false;
+            activeEmployeeControl1.Visible = false;
             resignedEmployeesControl1.Visible = false;
             addSingleEmployeeControl1.Visible = false;
             attendanceControl1.Visible = false;
+            companySalarySlipControl1.Visible = false;
+            companyRegistersControl1.Visible = false;
+
 
             //set given control's visible true
             control.Visible = true;
@@ -116,7 +119,7 @@ namespace Register
 
                                     //validate worksheet name.
                                     string worksheetName = getWorkSheet(cn);
-                                    String sql = "INSERT INTO [" + worksheetName + "] ([Employee ID],[Name],[Father's/Husband's Name],[Department],[Location],[Permanent Address],[Employee Contact Number],[DOB],[DOJ],[Aadhaar Number],[Pan Number],[PF Registration Number],[ESI Registration Number],[Bank Name],[Bank Account Number],[IFSC],[Appointment Letter],[Joining Letter],[ESI Declaration],[PF Number],[ESI Certificate],[Aadhaar Card],[PAN Card],[Bank Cheque],[Nominee Detail],[Family Undertaking],[Nominee Name],[Nominee's Relation],[Nominee's Contact],[Status]) values('" + dRow["Employee ID"] + "', '" + dRow["Name"] + "', '" + dRow["Father's/Husband's Name"] + "', '" + dRow["Department"] + "', '" + dRow["Location"] + "', '" + dRow["Permanent Address"] + "', '" + dRow["Employee Contact Number"] + "', '" + dRow["DOB"] + "', '" + dRow["DOJ"] + "', '" + dRow["Aadhaar Number"] + "', '" + dRow["Pan Number"] + "', '" + dRow["PF Registration Number"] + "', '" + dRow["ESI Registration Number"] + "', '" + dRow["Bank Name"] + "', '" + dRow["Bank Account Number"] + "', '" + dRow["IFSC"] + "', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', '" + dRow["Nominee Name"] + "', '" + dRow["Nominee's Relation"] + "', '" + dRow["Nominee's Contact"] + "', 'Active');";
+                                    String sql = "INSERT INTO [" + worksheetName + "] ([Employee ID],[Name],[Father's/Husband's Name],[Department],[Location],[Permanent Address],[Employee Contact Number],[DOB],[DOJ],[Aadhaar Number],[Pan Number],[PF Registration Number],[ESI Registration Number],[Bank Name],[Bank Account Number],[IFSC],[Appointment Letter],[Joining Letter],[ESI Declaration],[PF Number],[ESI Certificate],[Aadhaar Card],[PAN Card],[Bank Cheque],[Nominee Detail],[Family Undertaking],[Nominee Name],[Nominee Relation],[Nominee Contact],[Status]) values('" + dRow["Employee ID"] + "', '" + dRow["Name"] + "', '" + dRow["Father's/Husband's Name"] + "', '" + dRow["Department"] + "', '" + dRow["Location"] + "', '" + dRow["Permanent Address"] + "', '" + dRow["Employee Contact Number"] + "', '" + dRow["DOB"] + "', '" + dRow["DOJ"] + "', '" + dRow["Aadhaar Number"] + "', '" + dRow["Pan Number"] + "', '" + dRow["PF Registration Number"] + "', '" + dRow["ESI Registration Number"] + "', '" + dRow["Bank Name"] + "', '" + dRow["Bank Account Number"] + "', '" + dRow["IFSC"] + "', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', 'NA', '" + dRow["Nominee Name"] + "', '" + dRow["Nominee's Relation"] + "', '" + dRow["Nominee's Contact"] + "', 'Active');";
 
                                     OleDbCommand cmd1 = new OleDbCommand(sql, cn);
                                     cmd1.ExecuteNonQuery();
@@ -196,6 +199,14 @@ namespace Register
             return result;
         }
 
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            SetActivePanel(companySalarySlipControl1);
+        }
 
+        private void toolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            SetActivePanel(companyRegistersControl1);
+        }
     }
 }

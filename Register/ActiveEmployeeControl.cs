@@ -66,13 +66,13 @@ namespace Register
             listView1.Columns[listView1.Columns.Count - 1].Width = -2;
         }
 
-        private void ActiveEmployeeControl_Load(object sender, EventArgs e)
+        private void ActiveEmployeeControl_Load_1(object sender, EventArgs e)
         {
             companyID = HomeControl.companyID;
             loadData();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void textBox1_TextChanged_1(object sender, EventArgs e)
         {
             listView1.Items.Clear();
 
@@ -108,7 +108,7 @@ namespace Register
             return item.SubItems[1].Text.ToLower().Contains(text.ToLower());
         }
 
-        private void listView1_ItemActivate(object sender, EventArgs e)
+        private void listView1_ItemActivate_1(object sender, EventArgs e)
         {
             if (listView1.SelectedItems.Count > 0)
             {
@@ -119,7 +119,6 @@ namespace Register
                 employeeDetail.Show();
             }
         }
-
 
     }
 }

@@ -30,6 +30,12 @@ namespace Register
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.companyRegistersControl1 = new Register.CompanyRegistersControl();
+            this.companySalarySlipControl1 = new Register.CompanySalarySlipControl();
+            this.attendanceControl1 = new Register.AttendanceControl();
+            this.addSingleEmployeeControl1 = new Register.AddSingleEmployeeControl();
+            resignedEmployeesControl1 = new Register.ResignedEmployeesControl();
+            this.companyDetailControl1 = new Register.companyDetailControl();
             activeEmployeeControl1 = new Register.ActiveEmployeeControl();
             this.companyDetailToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.activeEmployeesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -39,11 +45,8 @@ namespace Register
             this.singleEmployeeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listEmployeeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addAttendanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.attendanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            companyDetailControl1 = new Register.companyDetailControl();
-            resignedEmployeesControl1 = new Register.ResignedEmployeesControl();
-            addSingleEmployeeControl1 = new Register.AddSingleEmployeeControl();
-            attendanceControl1 = new Register.AttendanceControl();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -52,17 +55,90 @@ namespace Register
             // 
             this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(attendanceControl1);
-            this.panel1.Controls.Add(addSingleEmployeeControl1);
+            this.panel1.Controls.Add(this.companyRegistersControl1);
+            this.panel1.Controls.Add(this.companySalarySlipControl1);
+            this.panel1.Controls.Add(this.attendanceControl1);
+            this.panel1.Controls.Add(this.addSingleEmployeeControl1);
             this.panel1.Controls.Add(resignedEmployeesControl1);
-            this.panel1.Controls.Add(companyDetailControl1);
+            this.panel1.Controls.Add(this.companyDetailControl1);
             this.panel1.Controls.Add(activeEmployeeControl1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 29);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 421);
+            this.panel1.Size = new System.Drawing.Size(1000, 421);
             this.panel1.TabIndex = 2;
             this.panel1.TabStop = true;
+            // 
+            // companyRegisterControl1
+            // 
+            this.companyRegistersControl1.AutoScroll = true;
+            this.companyRegistersControl1.AutoSize = true;
+            this.companyRegistersControl1.BackColor = System.Drawing.Color.Transparent;
+            this.companyRegistersControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.companyRegistersControl1.ForeColor = System.Drawing.SystemColors.Window;
+            this.companyRegistersControl1.Location = new System.Drawing.Point(0, 0);
+            this.companyRegistersControl1.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.companyRegistersControl1.Name = "companyRegisterControl1";
+            this.companyRegistersControl1.Size = new System.Drawing.Size(1000, 421);
+            this.companyRegistersControl1.TabIndex = 6;
+            // 
+            // companySalarySlipControl1
+            // 
+            this.companySalarySlipControl1.AutoScroll = true;
+            this.companySalarySlipControl1.AutoSize = true;
+            this.companySalarySlipControl1.BackColor = System.Drawing.Color.Transparent;
+            this.companySalarySlipControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.companySalarySlipControl1.ForeColor = System.Drawing.SystemColors.Window;
+            this.companySalarySlipControl1.Location = new System.Drawing.Point(0, 0);
+            this.companySalarySlipControl1.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.companySalarySlipControl1.Name = "companySalarySlipControl1";
+            this.companySalarySlipControl1.Size = new System.Drawing.Size(1000, 421);
+            this.companySalarySlipControl1.TabIndex = 5;
+            // 
+            // attendanceControl1
+            // 
+            this.attendanceControl1.AutoScroll = true;
+            this.attendanceControl1.AutoSize = true;
+            this.attendanceControl1.BackColor = System.Drawing.Color.Transparent;
+            this.attendanceControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.attendanceControl1.ForeColor = System.Drawing.SystemColors.Window;
+            this.attendanceControl1.Location = new System.Drawing.Point(0, 0);
+            this.attendanceControl1.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.attendanceControl1.Name = "attendanceControl1";
+            this.attendanceControl1.Size = new System.Drawing.Size(1000, 421);
+            this.attendanceControl1.TabIndex = 4;
+            // 
+            // addSingleEmployeeControl1
+            // 
+            this.addSingleEmployeeControl1.BackColor = System.Drawing.Color.Transparent;
+            this.addSingleEmployeeControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.addSingleEmployeeControl1.ForeColor = System.Drawing.SystemColors.Window;
+            this.addSingleEmployeeControl1.Location = new System.Drawing.Point(0, 0);
+            this.addSingleEmployeeControl1.Name = "addSingleEmployeeControl1";
+            this.addSingleEmployeeControl1.Size = new System.Drawing.Size(1000, 421);
+            this.addSingleEmployeeControl1.TabIndex = 3;
+            // 
+            // resignedEmployeesControl1
+            // 
+            resignedEmployeesControl1.AutoScroll = true;
+            resignedEmployeesControl1.AutoSize = true;
+            resignedEmployeesControl1.BackColor = System.Drawing.Color.Transparent;
+            resignedEmployeesControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            resignedEmployeesControl1.Location = new System.Drawing.Point(0, 0);
+            resignedEmployeesControl1.Name = "resignedEmployeesControl1";
+            resignedEmployeesControl1.Size = new System.Drawing.Size(1000, 421);
+            resignedEmployeesControl1.TabIndex = 2;
+            // 
+            // companyDetailControl1
+            // 
+            this.companyDetailControl1.AutoScroll = true;
+            this.companyDetailControl1.AutoSize = true;
+            this.companyDetailControl1.BackColor = System.Drawing.Color.Transparent;
+            this.companyDetailControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.companyDetailControl1.Location = new System.Drawing.Point(0, 0);
+            this.companyDetailControl1.Name = "companyDetailControl1";
+            this.companyDetailControl1.Size = new System.Drawing.Size(1000, 421);
+            this.companyDetailControl1.TabIndex = 1;
             // 
             // activeEmployeeControl1
             // 
@@ -70,8 +146,8 @@ namespace Register
             activeEmployeeControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             activeEmployeeControl1.Location = new System.Drawing.Point(0, 0);
             activeEmployeeControl1.Name = "activeEmployeeControl1";
-            activeEmployeeControl1.Size = new System.Drawing.Size(800, 421);
-            .activeEmployeeControl1.TabIndex = 0;
+            activeEmployeeControl1.Size = new System.Drawing.Size(1000, 421);
+            activeEmployeeControl1.TabIndex = 0;
             // 
             // companyDetailToolStripMenuItem
             // 
@@ -107,10 +183,11 @@ namespace Register
             this.resignedEmployeesToolStripMenuItem,
             this.toolStripMenuItem1,
             this.addAttendanceToolStripMenuItem,
-            this.attendanceToolStripMenuItem});
+            this.toolStripMenuItem2,
+            this.toolStripMenuItem3});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 29);
+            this.menuStrip1.Size = new System.Drawing.Size(984, 29);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -152,55 +229,23 @@ namespace Register
             this.addAttendanceToolStripMenuItem.Text = "Attendance";
             this.addAttendanceToolStripMenuItem.Click += new System.EventHandler(this.addAttendanceToolStripMenuItem_Click);
             // 
-            // attendanceToolStripMenuItem
+            // toolStripMenuItem2
             // 
-            this.attendanceToolStripMenuItem.Name = "attendanceToolStripMenuItem";
-            this.attendanceToolStripMenuItem.Size = new System.Drawing.Size(110, 25);
-            this.attendanceToolStripMenuItem.Text = "Attendance";
+            this.toolStripMenuItem2.BackColor = System.Drawing.Color.Black;
+            this.toolStripMenuItem2.ForeColor = System.Drawing.Color.White;
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(103, 25);
+            this.toolStripMenuItem2.Text = "Salary Slip";
+            this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
-            // companyDetailControl2
+            // toolStripMenuItem3
             // 
-            companyDetailControl1.AutoScroll = true;
-            companyDetailControl1.AutoSize = true;
-            companyDetailControl1.BackColor = System.Drawing.Color.Transparent;
-            companyDetailControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            companyDetailControl1.Location = new System.Drawing.Point(0, 0);
-            companyDetailControl1.Name = "companyDetailControl2";
-            companyDetailControl1.Size = new System.Drawing.Size(800, 421);
-            companyDetailControl1.TabIndex = 1;
-            // 
-            // resignedEmployeesControl2
-            // 
-            resignedEmployeesControl1.AutoScroll = true;
-            resignedEmployeesControl1.AutoSize = true;
-            resignedEmployeesControl1.BackColor = System.Drawing.Color.Transparent;
-            resignedEmployeesControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            resignedEmployeesControl1.Location = new System.Drawing.Point(0, 0);
-            resignedEmployeesControl1.Name = "resignedEmployeesControl2";
-            resignedEmployeesControl1.Size = new System.Drawing.Size(800, 421);
-            resignedEmployeesControl1.TabIndex = 2;
-            // 
-            // addSingleEmployeeControl2
-            // 
-            addSingleEmployeeControl1.BackColor = System.Drawing.Color.Transparent;
-            addSingleEmployeeControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            addSingleEmployeeControl1.ForeColor = System.Drawing.SystemColors.Window;
-            addSingleEmployeeControl1.Location = new System.Drawing.Point(0, 0);
-            addSingleEmployeeControl1.Name = "addSingleEmployeeControl2";
-            addSingleEmployeeControl1.Size = new System.Drawing.Size(800, 421);
-            addSingleEmployeeControl1.TabIndex = 3;
-            // 
-            // attendanceControl2
-            // 
-            attendanceControl1.AutoScroll = true;
-            attendanceControl1.AutoSize = true;
-            attendanceControl1.BackColor = System.Drawing.Color.Transparent;
-            attendanceControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            attendanceControl1.ForeColor = System.Drawing.SystemColors.Window;
-            attendanceControl1.Location = new System.Drawing.Point(0, 0);
-            attendanceControl1.Name = "attendanceControl2";
-            attendanceControl1.Size = new System.Drawing.Size(800, 421);
-            attendanceControl1.TabIndex = 4;
+            this.toolStripMenuItem3.BackColor = System.Drawing.Color.Black;
+            this.toolStripMenuItem3.ForeColor = System.Drawing.Color.White;
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(91, 25);
+            this.toolStripMenuItem3.Text = "Registers";
+            this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
             // 
             // CompanyDetail
             // 
@@ -208,7 +253,7 @@ namespace Register
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackgroundImage = global::Register.Properties.Resources.background;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(984, 450);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
             this.ForeColor = System.Drawing.SystemColors.Window;
@@ -234,14 +279,17 @@ namespace Register
         private System.Windows.Forms.ToolStripMenuItem resignedEmployeesToolStripMenuItem;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem addAttendanceToolStripMenuItem;
-        private static companyDetailControl companyDetailControl1;
-        private static AddSingleEmployeeControl addSingleEmployeeControl1;
-        private System.Windows.Forms.ToolStripMenuItem attendanceToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem singleEmployeeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listEmployeeToolStripMenuItem;
-        public static AttendanceControl attendanceControl1;
+        private companyDetailControl companyDetailControl1;
+        private AddSingleEmployeeControl addSingleEmployeeControl1;
+        public AttendanceControl attendanceControl1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
         public static ResignedEmployeesControl resignedEmployeesControl1;
         public static ActiveEmployeeControl activeEmployeeControl1;
+        public CompanySalarySlipControl companySalarySlipControl1;
+        public CompanyRegistersControl companyRegistersControl1;
     }
 }

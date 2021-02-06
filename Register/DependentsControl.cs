@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
 using System.IO;
+using Spire.Xls;
 
 namespace Register
 {
@@ -26,8 +27,8 @@ namespace Register
         {
             try
             {
-                this.companyID = ActiveEmployeeControl22.companyID;
-                this.employeeID = ActiveEmployeeControl22.employeeID;
+                this.companyID = ActiveEmployeeControl.companyID;
+                this.employeeID = ActiveEmployeeControl.employeeID;
                 loadData();
             }catch(Exception ex)
             {
@@ -120,20 +121,31 @@ namespace Register
 
         public void deleteDependent(string dependentId, bool flag)
         {
-            string sourceConstr = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source='C:\data\detail\" + companyID + @"\" + companyID + "_dependent.xls';Extended Properties='excel 8.0;HDR=Yes;IMEX=0;READONLY=FALSE'";
-
-            using (OleDbConnection cn = new OleDbConnection(sourceConstr))
+            try
             {
-                cn.Open();
+                Workbook workbook = new Workbook();
+                workbook.LoadFromFile(@"C:\data\detail\" + companyID + @"\" + companyID + "_dependent.xls");
 
-                String sql = "UPDATE [dependent_detail$] SET [Employee ID]='NA', [Dependent ID]='NA', [Dependent Name]='NA', [Relation]='NA', [DOB]='NA' WHERE [Employee ID]='"+ employeeID + "' AND [Dependent ID]='" + dependentId +"';";
+                Worksheet worksheet = workbook.Worksheets[0];
 
-                Console.WriteLine("SQL :: " + sql);
+                long rowCount = worksheet.Rows.LongCount<CellRange>();
+                long cellCount = worksheet.Columns.LongCount<CellRange>();
 
-                OleDbCommand cmd1 = new OleDbCommand(sql, cn);
-                cmd1.ExecuteNonQuery();
-                cn.Close();
+                Console.WriteLine("Row Count: " + rowCount);
+                Console.WriteLine("Column Count: "+cellCount);
 
+                for (var ri = 2; ri <= rowCount; ri++ )
+                {
+                    var val = worksheet.Range[ri, 2].Value;
+                    if (val.Equals(dependentId))
+                        worksheet.DeleteRow(ri);
+                }
+                workbook.Save();
+
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                Console.WriteLine(ex.ToString());
             }
 
             if(flag)

@@ -27,8 +27,8 @@ namespace Register
 
         private void EmployeeDetailControl_Load(object sender, EventArgs e)
         {
-            this.companyID = ActiveEmployeeControl22.companyID;
-            this.employeeID = ActiveEmployeeControl22.employeeID;
+            this.companyID = ActiveEmployeeControl.companyID;
+            this.employeeID = ActiveEmployeeControl.employeeID;
             setTextBoxData();
         }
 
@@ -62,7 +62,7 @@ namespace Register
                     {
                         cn.Open();
 
-                        String sql = "UPDATE [employee_detail$] SET [Name]='" + textBox2.Text.ToString() + "', [Father/Husband Name]='" + textBox3.Text.ToString() + "', [Department]='" + textBox4.Text.ToString() + "',[Location]='" + textBox5.Text.ToString() + "',[Permanent Address]='" + textBox6.Text.ToString() + "', [Employee Contact Number]='" + textBox7.Text.ToString() + "', [DOB]='" + dateTimePicker1.Text.ToString() + "', [DOJ]='" + dateTimePicker2.Text.ToString() + "', [Aadhaar Number]='" + textBox10.Text.ToString() + "', [Pan Number]='" + textBox11.Text.ToString() + "', [PF Registration Number]='" + textBox12.Text.ToString() + "', [ESI Registration Number]='" + textBox13.Text.ToString() + "', [Bank Name]='" + textBox14.Text.ToString() + "', [Bank Account Number]='" + textBox15.Text.ToString() + "', [IFSC]='" + textBox16.Text.ToString() + "', [Nominee Name]='" + textBox17.Text.ToString() + "', [Nominee Relation]='" + textBox18.Text.ToString() + "', [Nominee Contact]='" + textBox19.Text.ToString() + "' WHERE [Employee ID]='" + textBox1.Text.ToString() + "';";
+                        String sql = "UPDATE [employee_detail$] SET [Name]='" + textBox2.Text.ToString() + "', [Father's/Husband's Name]='" + textBox3.Text.ToString() + "', [Department]='" + textBox4.Text.ToString() + "',[Location]='" + textBox5.Text.ToString() + "',[Permanent Address]='" + textBox6.Text.ToString() + "', [Employee Contact Number]='" + textBox7.Text.ToString() + "', [DOB]='" + dateTimePicker1.Text.ToString() + "', [DOJ]='" + dateTimePicker2.Text.ToString() + "', [Aadhaar Number]='" + textBox10.Text.ToString() + "', [Pan Number]='" + textBox11.Text.ToString() + "', [PF Registration Number]='" + textBox12.Text.ToString() + "', [ESI Registration Number]='" + textBox13.Text.ToString() + "', [Bank Name]='" + textBox14.Text.ToString() + "', [Bank Account Number]='" + textBox15.Text.ToString() + "', [IFSC]='" + textBox16.Text.ToString() + "', [Nominee Name]='" + textBox17.Text.ToString() + "', [Nominee Relation]='" + textBox18.Text.ToString() + "', [Nominee Contact]='" + textBox19.Text.ToString() + "' WHERE [Employee ID]='" + textBox1.Text.ToString() + "';";
 
                         Console.WriteLine("SQL :: " + sql);
 
@@ -144,7 +144,7 @@ namespace Register
 
                 textBox1.Text = companyData["Employee ID"].ToString();
                 textBox2.Text = companyData["Name"].ToString();
-                textBox3.Text = companyData["Father/Husband Name"].ToString();
+                textBox3.Text = companyData["Father's/Husband's Name"].ToString();
                 textBox4.Text = companyData["Department"].ToString();
                 textBox5.Text = companyData["Location"].ToString();
                 textBox6.Text = companyData["Permanent Address"].ToString();

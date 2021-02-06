@@ -235,7 +235,7 @@ namespace Register
 
             workSheet.Cells["A1"].Value = "Employee ID";
             workSheet.Cells["B1"].Value = "Name";
-            workSheet.Cells["C1"].Value = "Father/Husband Name";
+            workSheet.Cells["C1"].Value = "Father's/Husband's Name";
             workSheet.Cells["D1"].Value = "Department";
             workSheet.Cells["E1"].Value = "Location";
             workSheet.Cells["F1"].Value = "Permanent Address";

@@ -60,6 +60,7 @@ namespace Register
             this.maskedTextBox1.Name = "maskedTextBox1";
             this.maskedTextBox1.Size = new System.Drawing.Size(250, 29);
             this.maskedTextBox1.TabIndex = 19;
+            this.maskedTextBox1.TextChanged += new System.EventHandler(this.maskedTextBox1_TextChanged);
             // 
             // textBox1
             // 
@@ -69,6 +70,7 @@ namespace Register
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(200, 29);
             this.textBox1.TabIndex = 18;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
             // 
             // button2
             // 
@@ -129,6 +131,7 @@ namespace Register
             this.listView1.TabStop = false;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.ItemActivate += new System.EventHandler(this.listView1_ItemActivate_1);
             // 
             // ActiveEmployeeControl
             // 
@@ -144,6 +147,7 @@ namespace Register
             this.Controls.Add(this.listView1);
             this.Name = "ActiveEmployeeControl";
             this.Size = new System.Drawing.Size(800, 424);
+            this.Load += new System.EventHandler(this.ActiveEmployeeControl_Load_1);
             this.ResumeLayout(false);
             this.PerformLayout();
 
