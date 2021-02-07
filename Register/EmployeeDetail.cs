@@ -43,11 +43,16 @@ namespace Register
             //set visible false for all
             employeeDetailControl1.Visible = false;
             dependentsControl1.Visible = false;
+            employeeSalarySlipControl1.Visible = false;
 
             //set given control's visible true
             control.Visible = true;
 
         }
 
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            SetActivePanel(employeeSalarySlipControl1);
+        }
     }
 }

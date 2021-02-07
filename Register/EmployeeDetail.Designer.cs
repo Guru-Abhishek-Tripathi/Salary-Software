@@ -32,9 +32,11 @@ namespace Register
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.employeeDetailToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dependentsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dependentsControl1 = new Register.DependentsControl();
             this.employeeDetailControl1 = new Register.EmployeeDetailControl();
+            this.employeeSalarySlipControl1 = new Register.EmployeeSalarySlipControl();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -45,7 +47,8 @@ namespace Register
             this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.employeeDetailToolStripMenuItem,
-            this.dependentsToolStripMenuItem1});
+            this.dependentsToolStripMenuItem1,
+            this.toolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 29);
@@ -68,10 +71,19 @@ namespace Register
             this.dependentsToolStripMenuItem1.Text = "Dependents";
             this.dependentsToolStripMenuItem1.Click += new System.EventHandler(this.dependentsToolStripMenuItem1_Click);
             // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.ForeColor = System.Drawing.SystemColors.Window;
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(183, 25);
+            this.toolStripMenuItem1.Text = "Employee Salary Slip";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
+            // 
             // panel1
             // 
             this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.employeeSalarySlipControl1);
             this.panel1.Controls.Add(this.dependentsControl1);
             this.panel1.Controls.Add(this.employeeDetailControl1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -104,6 +116,17 @@ namespace Register
             this.employeeDetailControl1.Size = new System.Drawing.Size(800, 421);
             this.employeeDetailControl1.TabIndex = 0;
             // 
+            // employeeSalarySlipControl1
+            // 
+            this.employeeSalarySlipControl1.AutoScroll = true;
+            this.employeeSalarySlipControl1.AutoSize = true;
+            this.employeeSalarySlipControl1.BackColor = System.Drawing.Color.Transparent;
+            this.employeeSalarySlipControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.employeeSalarySlipControl1.Location = new System.Drawing.Point(0, 0);
+            this.employeeSalarySlipControl1.Name = "employeeSalarySlipControl1";
+            this.employeeSalarySlipControl1.Size = new System.Drawing.Size(800, 421);
+            this.employeeSalarySlipControl1.TabIndex = 2;
+            // 
             // EmployeeDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -135,5 +158,7 @@ namespace Register
         private EmployeeDetailControl employeeDetailControl1;
         private System.Windows.Forms.ToolStripMenuItem dependentsToolStripMenuItem1;
         private DependentsControl dependentsControl1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private EmployeeSalarySlipControl employeeSalarySlipControl1;
     }
 }
